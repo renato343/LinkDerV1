@@ -1,6 +1,5 @@
 org\renato\Controllers\CandidateController.class
 org\renato\service\user\UserServiceImpl.class
-org\renato\service\Service.class
 org\renato\model\pojos\Candidate.class
 org\renato\model\pojos\Match.class
 org\renato\model\dao\CandidateRepository.class
