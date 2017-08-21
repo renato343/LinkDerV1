@@ -15,32 +15,14 @@ public interface UserService {
 
     Iterable<Match> getAllMatches();
 
-    void addCadet(Candidate userType);
+    boolean addCandidate(Candidate candidate);
 
-    void addCompany(Company userType);
+    boolean addCompany(Company company);
 
-//    Candidate getCandidateLogged();
-//
-//    void setCandidateLogged(Candidate candidateLogged);
-//
-//    Company getCompanyLogged();
-//
-//    void setCompanyLogged(Company companyLogged);
-//
-//    boolean getIsCompany();
-//
-//    void setIsCompany(boolean company);
-//
-//    boolean authenticate(String name, String pass);
-//
+    boolean authCompany(String name, String pass);
 
-//
-//    boolean exists(String name);
-//
-//    Candidate findCadetByMail(String name);
-//
-//    Company findCompanyByMail(String mail);
-//
+    boolean authCandidate(String name, String pass);
+
 //    void updateMatch(Match match);
 //
 //    void match(Candidate candidateLogged, Company company);
@@ -48,7 +30,6 @@ public interface UserService {
 //    Match checkMatch(Candidate candidate, Company company);
 //
 //    List getMatches();
-
 
 }
 

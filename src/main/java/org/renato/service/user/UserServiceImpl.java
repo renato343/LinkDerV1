@@ -18,6 +18,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class UserServiceImpl implements UserService {
 
+    private boolean isAuthenticate = false;
+
+    private boolean isCompany = true;
+
+
     @Autowired
     private CandidateRepository candidateRepository;
 
@@ -30,6 +35,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public Iterable<Candidate> getAllCadets() {
+
         return candidateRepository.findAll();
     }
 
@@ -47,134 +53,61 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public void addCadet(Candidate userType) {
+    public boolean addCandidate(Candidate candidate) {
 
-        if (candidateRepository.readByMail(userType.getEmail()) == null) {
-            candidateRepository.create(userType);
+        if (candidateRepository.findCandidateByEmail(candidate.getEmail()) == null) {
+            candidateRepository.save(candidate);
+            return true;
+        } else {
+            return false;
         }
     }
 
     @Transactional
     @Override
-    public void addCompany(Company userType) {
+    public boolean addCompany(Company company) {
 
-        if (companyDao.readByMail(userType.getEmail()) == null) {
-            companyDao.create(userType);
+        if (companyRepository.findCompaniesByEmail(company.getEmail()) == null) {
+            companyRepository.save(company);
+            return true;
+        } else {
+            return false;
         }
     }
 
+    @Transactional
+    @Override
+    public boolean authCompany(String mail, String pass) {
 
-//
-//    private Candidate candidateLogged;
-//    private Company companyLogged;
-//    private String userAuth;
-//
-//    private boolean isAuthenticate = false;
-//    private boolean isCompany = true;
-//
-//    private List companies;
-//    private List cadets;
-//    private List matches;
-//
-//
-//
-//    public Candidate getCandidateLogged() {
-//        return candidateLogged;
-//    }
-//
-//    public void setCandidateLogged(Candidate candidateLogged) {
-//        this.candidateLogged = candidateLogged;
-//    }
-//
-//    public Company getCompanyLogged() {
-//        return companyLogged;
-//    }
-//
-//    public void setCompanyLogged(Company companyLogged) {
-//        this.companyLogged = companyLogged;
-//    }
-//
-//    public boolean getIsCompany() {
-//        return isCompany;
-//    }
-//
-//    public void setIsCompany(boolean company) {
-//        isCompany = company;
-//    }
-//
-//    @Transactional
-//    @Override
-//    public boolean authenticate(String name, String pass) {
-//
-//
-//        if (isCompany) {
-//
-//            if (companyDao.readByName(name).getName().equals(name) &&
-//                    companyDao.readByName(name).getPassword().equals(pass)) {
-//                isAuthenticate = true;
-//                userAuth = name;
-//            } else {
-//                isAuthenticate = false;
-//
-//            }
-//        } else {
-//
-//            if (candidateRepository.readByName(name).getName().equals(name) &&
-//                    candidateRepository.readByName(name).getPassword().equals(pass)) {
-//                isAuthenticate = true;
-//                userAuth = name;
-//            } else {
-//                isAuthenticate = false;
-//            }
-//
-//
-//        }
-//        return isAuthenticate;
-//
-//    }
-//
-//    @Transactional
-//    @Override
-//    public boolean exists(String name) {
-//
-//        if (isCompany) {
-//
-//            if (companyDao.readByName(name) == null) {
-//                return false;
-//            } else {
-//                return true;
-//            }
-//
-//        } else {
-//
-//            if (candidateRepository.readByName(name) == null) {
-//                return false;
-//            } else {
-//                return true;
-//            }
-//
-//        }
-//
-//
-//    }
-//
-//    @Transactional
-//    @Override
-//    public Candidate findCadetByMail(String mail) {
-//
-//        Candidate userType = candidateRepository.readByMail(mail);
-//        return userType;
-//
-//    }
-//
-//    @Transactional
-//    @Override
-//    public Company findCompanyByMail(String mail) {
-//
-//        Company userType = companyDao.readByMail(mail);
-//        return userType;
-//
-//    }
+        Company company = companyRepository.findCompaniesByEmail(mail);
+
+        if (company.getEmail().equals(mail) && company.getPassword().equals(pass)) {
+            isAuthenticate = true;
+        } else {
+            isAuthenticate = false;
+        }
+
+        return isAuthenticate;
+
+    }
+
+    @Transactional
+    @Override
+    public boolean authCandidate(String mail, String pass) {
+
+
+        Candidate candidate = candidateRepository.findCandidateByEmail(mail);
+
+        if (candidate.getEmail().equals(mail) && candidate.getPassword().equals(pass)) {
+            isAuthenticate = true;
+        } else {
+            isAuthenticate = false;
+        }
+
+        return isAuthenticate;
+
+    }
+
 //
 //    @Override
 //    public Match checkMatch(Candidate candidate, Company company) {
@@ -205,14 +138,6 @@ public class UserServiceImpl implements UserService {
 //            match.setCompany_bol(true);
 //            matchDao.update(match);
 //        }
-//    }
-//
-//    @Transactional
-//    @Override
-//    public List getMatches() {
-//
-//        matches = matchDao.all();
-//        return matches;
 //    }
 
 
