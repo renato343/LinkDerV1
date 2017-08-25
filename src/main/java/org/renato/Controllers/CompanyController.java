@@ -1,7 +1,7 @@
 package org.renato.Controllers;
 
 import org.renato.model.pojos.Company;
-import org.renato.service.user.UserService;
+import org.renato.services.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

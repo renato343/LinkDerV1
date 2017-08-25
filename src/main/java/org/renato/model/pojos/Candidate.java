@@ -8,14 +8,13 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "cadets")
+@Table(name = "candidates")
 public class Candidate {
 
-
     @Id
-    @Column(name = "cadet_id")
+    @Column(name = "candidate_id")
     @GeneratedValue ( strategy = GenerationType.IDENTITY)
-    private Integer cadet_Id;
+    private Long cadet_Id;
 
     @Column (name = "email")
     private String email;
@@ -39,11 +38,11 @@ public class Candidate {
         this.motto = motto;
     }
 
-    public Integer getCadet_Id() {
+    public Long getCadet_Id() {
         return cadet_Id;
     }
 
-    public void setCadet_Id(Integer cadet_Id) {
+    public void setCadet_Id(Long cadet_Id) {
         this.cadet_Id = cadet_Id;
     }
 

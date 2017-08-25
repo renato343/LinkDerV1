@@ -1,7 +1,9 @@
 package org.renato.Controllers;
 
 import org.renato.model.pojos.Candidate;
-import org.renato.service.user.UserService;
+
+import org.renato.model.pojos.User;
+import org.renato.services.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,12 +32,22 @@ public class CandidateController {
 
     @GetMapping(path = "/auth")
     public @ResponseBody
-    String authenticate(@RequestParam String email, @RequestParam String pass) {
+    User authenticate(@RequestParam String email, @RequestParam String pass) {
 
+        User user;
         if (userService.authCandidate(email, pass)) {
-            return "welcome " + email;
+
+            user = new User();
+            Candidate candidate = userService.getCandidateByEmail(email);
+
+            user.setEmail(candidate.getEmail());
+            user.setName(candidate.getName());
+            user.setMotto(candidate.getMotto());
+            user.setUserId(candidate.getCadet_Id());
+
+            return user;
         } else {
-            return "Wrong Pass";
+            return user = new User();
         }
     }
 
@@ -43,6 +55,12 @@ public class CandidateController {
     public @ResponseBody
     Iterable<Candidate> getAllCandidates() {
         return userService.getAllCadets();
+    }
+
+    @GetMapping(path = "/id")
+    public @ResponseBody
+    Candidate getCandidateById(@RequestParam long id){
+        return userService.getCandidateById(id);
     }
 
 

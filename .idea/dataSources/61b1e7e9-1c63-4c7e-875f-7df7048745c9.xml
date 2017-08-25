@@ -10,12 +10,12 @@
     <schema id="4" parent="1" name="mysql"/>
     <schema id="5" parent="1" name="performance_schema"/>
     <schema id="6" parent="1" name="sys"/>
-    <table id="7" parent="2" name="cadets"/>
+    <table id="7" parent="2" name="candidates"/>
     <table id="8" parent="2" name="companys"/>
     <table id="9" parent="2" name="match_table"/>
-    <column id="10" parent="7" name="cadet_id">
+    <column id="10" parent="7" name="candidate_id">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
@@ -37,7 +37,7 @@
     </column>
     <key id="15" parent="7" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>cadet_id</ColNames>
+      <ColNames>candidate_id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="16" parent="8" name="company_id">

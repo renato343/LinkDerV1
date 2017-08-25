@@ -1,9 +1,7 @@
 package org.renato.Controllers;
 
-import org.renato.model.dao.MatchRepository;
 import org.renato.model.pojos.Match;
-import org.renato.service.user.UserService;
-import org.renato.service.user.UserServiceImpl;
+import org.renato.services.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
