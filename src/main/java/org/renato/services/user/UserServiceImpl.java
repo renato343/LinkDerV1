@@ -1,14 +1,13 @@
 package org.renato.services.user;
 
-import org.renato.model.dao.CandidateRepository;
-import org.renato.model.dao.CompanyRepository;
-import org.renato.model.dao.MatchRepository;
-import org.renato.model.pojos.Candidate;
-import org.renato.model.pojos.Company;
-import org.renato.model.pojos.Match;
+import org.renato.model.dao.*;
+import org.renato.model.pojos.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -28,10 +27,29 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private MatchRepository matchRepository;
 
+    @Autowired
+    private LanguagesRepository languagesRepository;
+
+    @Autowired
+    private FrameworkRepository frameworkRepository;
+
+    @PersistenceContext
+    private EntityManager em;
+
+    @Transactional
+    @Override
+    public Iterable<Languages> getAllLanguages() {
+        return languagesRepository.findAll();
+    }
+
+    @Override
+    public Iterable<Frameworks> getAllFrameworks() {
+        return frameworkRepository.findAll();
+    }
+
     @Transactional
     @Override
     public Iterable<Candidate> getAllCadets() {
-
         return candidateRepository.findAll();
     }
 
@@ -57,7 +75,6 @@ public class UserServiceImpl implements UserService {
     public Candidate getCandidateByEmail(String email) {
         return candidateRepository.findCandidateByEmail(email);
     }
-
 
     @Transactional
     @Override
@@ -106,6 +123,10 @@ public class UserServiceImpl implements UserService {
 
         Candidate candidate = candidateRepository.findCandidateByEmail(mail);
 
+        if (candidate == null) {
+            return isAuthenticate;
+        }
+
         if (candidate.getEmail().equals(mail) && candidate.getPassword().equals(pass)) {
             isAuthenticate = true;
         } else {
@@ -115,6 +136,7 @@ public class UserServiceImpl implements UserService {
         return isAuthenticate;
 
     }
+
 
 //
 //    @Override

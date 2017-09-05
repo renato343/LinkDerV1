@@ -13,7 +13,7 @@ public class Company {
 
     @Id
     @Column(name = "company_id")
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
+    @GeneratedValue( strategy = GenerationType.AUTO)
     private Integer company_id;
 
     @Column (name = "email")

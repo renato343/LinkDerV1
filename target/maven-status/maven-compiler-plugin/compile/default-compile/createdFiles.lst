@@ -1,11 +1,11 @@
 org\renato\Controllers\CandidateController.class
-org\renato\model\pojos\User.class
 org\renato\services\Cors\WebConfig.class
 org\renato\model\pojos\Candidate.class
-org\renato\model\pojos\Location.class
+org\renato\model\pojos\Languages.class
 org\renato\model\pojos\Match.class
 org\renato\model\dao\CandidateRepository.class
 org\renato\Controllers\MatchController.class
+org\renato\model\dao\LanguagesRepository.class
 org\renato\model\dao\MatchRepository.class
 org\renato\model\pojos\Company.class
 org\renato\Application.class

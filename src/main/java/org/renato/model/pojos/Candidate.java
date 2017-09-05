@@ -1,6 +1,8 @@
 package org.renato.model.pojos;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 
 /**
@@ -9,33 +11,44 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "candidates")
-public class Candidate {
+public class Candidate implements Serializable{
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "candidate_id")
-    @GeneratedValue ( strategy = GenerationType.IDENTITY)
     private Long cadet_Id;
 
-    @Column (name = "email")
+    @Column(name = "email")
     private String email;
 
-    @Column (name = "name")
+    @Column(name = "name")
     private String name;
 
     @Column(name = "password")
     private String password;
 
-    @Column (name = "motto")
+    @Column(name = "motto")
     private String motto;
 
-    public Candidate() {
-    }
+    @Column(name = "github")
+    private String github;
 
-    public Candidate(String password, String email, String name, String motto) {
-        this.password = password;
-        this.email = email;
-        this.name = name;
-        this.motto = motto;
+    @Column(name = "linkedin")
+    private String linkedin;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, targetEntity = Languages.class)
+    @JoinTable(name = "candidate_languages",
+            joinColumns = {@JoinColumn(name = "candidate_id")},
+            inverseJoinColumns = {@JoinColumn(name = "language_id")})
+    private List<Languages> languages;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, targetEntity = Frameworks.class)
+    @JoinTable(name = "candidate_frameworks",
+            joinColumns = {@JoinColumn(name = "candidate_id")},
+            inverseJoinColumns = {@JoinColumn(name = "framework_id")})
+    private List<Frameworks> frameworks;
+
+    public Candidate() {
     }
 
     public Long getCadet_Id() {
@@ -46,16 +59,6 @@ public class Candidate {
         this.cadet_Id = cadet_Id;
     }
 
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-
     public String getEmail() {
         return email;
     }
@@ -63,7 +66,6 @@ public class Candidate {
     public void setEmail(String email) {
         this.email = email;
     }
-
 
     public String getName() {
         return name;
@@ -73,6 +75,13 @@ public class Candidate {
         this.name = name;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getMotto() {
         return motto;
@@ -82,4 +91,72 @@ public class Candidate {
         this.motto = motto;
     }
 
+    public String getGithub() {
+        return github;
+    }
+
+    public void setGithub(String github) {
+        this.github = github;
+    }
+
+    public String getLinkedin() {
+        return linkedin;
+    }
+
+    public void setLinkedin(String linkedin) {
+        this.linkedin = linkedin;
+    }
+
+    public List<Languages> getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(List<Languages> languages) {
+        this.languages = languages;
+    }
+
+    public List<Frameworks> getFrameworks() {
+        return frameworks;
+    }
+
+    public void setFrameworks(List<Frameworks> frameworks) {
+        this.frameworks = frameworks;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Candidate)) return false;
+
+        Candidate candidate = (Candidate) o;
+
+        if (getCadet_Id() != null ? !getCadet_Id().equals(candidate.getCadet_Id()) : candidate.getCadet_Id() != null)
+            return false;
+        if (getEmail() != null ? !getEmail().equals(candidate.getEmail()) : candidate.getEmail() != null) return false;
+        if (getName() != null ? !getName().equals(candidate.getName()) : candidate.getName() != null) return false;
+        if (getPassword() != null ? !getPassword().equals(candidate.getPassword()) : candidate.getPassword() != null)
+            return false;
+        if (getMotto() != null ? !getMotto().equals(candidate.getMotto()) : candidate.getMotto() != null) return false;
+        if (getGithub() != null ? !getGithub().equals(candidate.getGithub()) : candidate.getGithub() != null)
+            return false;
+        if (getLinkedin() != null ? !getLinkedin().equals(candidate.getLinkedin()) : candidate.getLinkedin() != null)
+            return false;
+        if (getLanguages() != null ? !getLanguages().equals(candidate.getLanguages()) : candidate.getLanguages() != null)
+            return false;
+        return getFrameworks() != null ? getFrameworks().equals(candidate.getFrameworks()) : candidate.getFrameworks() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getCadet_Id() != null ? getCadet_Id().hashCode() : 0;
+        result = 31 * result + (getEmail() != null ? getEmail().hashCode() : 0);
+        result = 31 * result + (getName() != null ? getName().hashCode() : 0);
+        result = 31 * result + (getPassword() != null ? getPassword().hashCode() : 0);
+        result = 31 * result + (getMotto() != null ? getMotto().hashCode() : 0);
+        result = 31 * result + (getGithub() != null ? getGithub().hashCode() : 0);
+        result = 31 * result + (getLinkedin() != null ? getLinkedin().hashCode() : 0);
+        result = 31 * result + (getLanguages() != null ? getLanguages().hashCode() : 0);
+        result = 31 * result + (getFrameworks() != null ? getFrameworks().hashCode() : 0);
+        return result;
+    }
 }

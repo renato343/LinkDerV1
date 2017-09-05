@@ -1,15 +1,18 @@
 package org.renato.services.user;
 
-import org.renato.model.pojos.Candidate;
-import org.renato.model.pojos.Company;
-import org.renato.model.pojos.Match;
+import org.renato.model.pojos.*;
 
 public interface UserService {
+
     Iterable<Candidate> getAllCadets();
 
     Iterable<Company> getAllCompanies();
 
     Iterable<Match> getAllMatches();
+
+    Iterable<Languages> getAllLanguages();
+
+    Iterable<Frameworks> getAllFrameworks();
 
     Candidate getCandidateById(Long id);
 
@@ -22,6 +25,8 @@ public interface UserService {
     boolean authCompany(String name, String pass);
 
     boolean authCandidate(String name, String pass);
+
+
 
 //    void updateMatch(Match match);
 //
