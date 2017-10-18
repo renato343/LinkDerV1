@@ -16,7 +16,7 @@ public class Candidate implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "candidate_id")
-    private Long cadet_Id;
+    private Long candidate_id;
 
     @Column(name = "email")
     private String email;
@@ -51,12 +51,12 @@ public class Candidate implements Serializable{
     public Candidate() {
     }
 
-    public Long getCadet_Id() {
-        return cadet_Id;
+    public Long getCandidate_id() {
+        return candidate_id;
     }
 
-    public void setCadet_Id(Long cadet_Id) {
-        this.cadet_Id = cadet_Id;
+    public void setCandidate_id(Long candidate_id) {
+        this.candidate_id = candidate_id;
     }
 
     public String getEmail() {
@@ -130,7 +130,7 @@ public class Candidate implements Serializable{
 
         Candidate candidate = (Candidate) o;
 
-        if (getCadet_Id() != null ? !getCadet_Id().equals(candidate.getCadet_Id()) : candidate.getCadet_Id() != null)
+        if (getCandidate_id() != null ? !getCandidate_id().equals(candidate.getCandidate_id()) : candidate.getCandidate_id() != null)
             return false;
         if (getEmail() != null ? !getEmail().equals(candidate.getEmail()) : candidate.getEmail() != null) return false;
         if (getName() != null ? !getName().equals(candidate.getName()) : candidate.getName() != null) return false;
@@ -148,7 +148,7 @@ public class Candidate implements Serializable{
 
     @Override
     public int hashCode() {
-        int result = getCadet_Id() != null ? getCadet_Id().hashCode() : 0;
+        int result = getCandidate_id() != null ? getCandidate_id().hashCode() : 0;
         result = 31 * result + (getEmail() != null ? getEmail().hashCode() : 0);
         result = 31 * result + (getName() != null ? getName().hashCode() : 0);
         result = 31 * result + (getPassword() != null ? getPassword().hashCode() : 0);

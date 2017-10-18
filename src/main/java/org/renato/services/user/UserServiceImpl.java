@@ -22,6 +22,9 @@ public class UserServiceImpl implements UserService {
     private CandidateRepository candidateRepository;
 
     @Autowired
+    private CandidateRepository candidateRepository1;
+
+    @Autowired
     private CompanyRepository companyRepository;
 
     @Autowired
@@ -50,6 +53,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public Iterable<Candidate> getAllCadets() {
+        System.out.println(candidateRepository.findAll());
         return candidateRepository.findAll();
     }
 
@@ -150,10 +154,10 @@ public class UserServiceImpl implements UserService {
 //    public void match(Candidate candidate, Company company) {
 //
 //            if (!isCompany) {
-//                Match match = new Match(candidate.getCadet_Id(), company.getCompany_id(), true, false);
+//                Match match = new Match(candidate.getCandidate_id(), company.getCompany_id(), true, false);
 //                matchDao.create(match);
 //            } else {
-//                Match match = new Match(candidate.getCadet_Id(), company.getCompany_id(), false, true);
+//                Match match = new Match(candidate.getCandidate_id(), company.getCompany_id(), false, true);
 //                matchDao.create(match);
 //            }
 //    }
