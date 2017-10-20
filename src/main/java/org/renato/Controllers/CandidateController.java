@@ -1,8 +1,9 @@
 package org.renato.Controllers;
 
-import org.renato.model.pojos.Candidate;
+import org.renato.model.pojos.Candidates;
 import org.renato.model.pojos.Frameworks;
 import org.renato.model.pojos.Languages;
+import org.renato.model.pojos.wrapper.Wrapper;
 import org.renato.services.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,8 +19,14 @@ public class CandidateController {
 
     @GetMapping(path = "/allCandidates")
     public @ResponseBody
-    Iterable<Candidate> getAllCandidates() {
-        return userService.getAllCadets();
+    Iterable<Candidates> getAllCandidates() {
+        return userService.getAllCandidates();
+    }
+
+    @GetMapping(path = "/allFrameworks")
+    public @ResponseBody
+    Iterable<Frameworks> getAllFrameworks() {
+        return userService.getAllFrameWork();
     }
 
     @GetMapping(path = "/allLanguages")
@@ -28,47 +35,66 @@ public class CandidateController {
         return userService.getAllLanguages();
     }
 
-    @GetMapping(path = "/allFrameworks")
-    public @ResponseBody
-    Iterable<Frameworks> getAllFrameworks() {
-        return userService.getAllFrameworks();
-    }
-
     @RequestMapping(method=RequestMethod.POST ,path = "/addCandidate")
     public @ResponseBody
-    String addNewUser(@RequestBody Candidate candidate) {
+    String addNewUser(@RequestBody Wrapper candidate) {
 
-        if (userService.addCandidate(candidate)) {
-            return "Saved";
+        for (Languages language:candidate.getLanguages()) {
+
+            if(userService.addLanguage(language)){
+                System.out.println(language.getName() + "added to database");
+            }
+        }
+
+        for (Frameworks frameworks : candidate.getFrameworks()) {
+
+            if(userService.addFramework(frameworks)){
+                System.out.println(frameworks.getName() + "added to database");
+            }
+        }
+
+        Candidates person = new Candidates();
+        person.setName(candidate.getName());
+        person.setEmail(candidate.getEmail());
+        person.setGithub(candidate.getGithub());
+        person.setLinkedin(candidate.getLinkedin());
+        person.setMotto(candidate.getMotto());
+        person.setPassword(candidate.getPassword());
+
+        if (userService.addCandidate(person)) {
+
+            return "Profile Created";
+
         } else {
-            return "User already register";
+
+            return "User Already exists";
         }
 
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/auth")
     public @ResponseBody
-    ResponseEntity<Candidate> authenticate(@RequestBody Candidate user) {
+    ResponseEntity<Candidates> authenticate(@RequestBody Candidates user) {
 
-        Candidate candidate = new Candidate();
+        Candidates candidate = new Candidates();
 
         if(userService.getCandidateByEmail(user.getEmail())==null){
-            return new ResponseEntity<Candidate>(candidate, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Candidates>(candidate, HttpStatus.NOT_FOUND);
         }
 
         if (userService.authCandidate(user.getEmail(), user.getPassword())) {
 
             candidate = userService.getCandidateByEmail(user.getEmail());
-            return new ResponseEntity<Candidate>(candidate, HttpStatus.OK);
+            return new ResponseEntity<Candidates>(candidate, HttpStatus.OK);
 
         } else {
-            return new ResponseEntity<Candidate>(candidate, HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<Candidates>(candidate, HttpStatus.UNAUTHORIZED);
         }
     }
 
     @GetMapping(path = "/id")
     public @ResponseBody
-    Candidate getCandidateById(@RequestParam long id) {
+    Candidates getCandidateById(@RequestParam long id) {
         return userService.getCandidateById(id);
     }
 

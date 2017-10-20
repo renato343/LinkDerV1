@@ -1,75 +1,44 @@
 package org.renato.model.pojos;
 
-import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-@Table(name = "Frameworks")
-public class Frameworks implements Serializable {
+public class Frameworks {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "framework_id")
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private long framework_Id;
+  private String name;
+  private long languages_Language_Id;
 
-    @Column (name = "name")
-    private String name;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, targetEntity = Candidate.class)
-    @JoinTable(name = "candidate_frameworks",
-            joinColumns = { @JoinColumn(name = "framework_id") },
-            inverseJoinColumns = { @JoinColumn(name = "candidate_id") })
-    private Set<Candidate> candidates;
+  public long getFramework_Id() {
+    return framework_Id;
+  }
 
-    public Frameworks() {
-    }
+  public void setFramework_Id(long framework_Id) {
+    this.framework_Id = framework_Id;
+  }
 
-    public Frameworks(String name) {
-        this.name = name;
-    }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public long getLanguages_Language_Id() {
+    return languages_Language_Id;
+  }
 
-    public Set<Candidate> getCandidates() {
-        return candidates;
-    }
+  public void setLanguages_Language_Id(long languages_Language_Id) {
+    this.languages_Language_Id = languages_Language_Id;
+  }
 
-    public void setCandidates(Set<Candidate> candidates) {
-        this.candidates = candidates;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Frameworks)) return false;
-
-        Frameworks that = (Frameworks) o;
-
-        if (getId() != null ? !getId().equals(that.getId()) : that.getId() != null) return false;
-        if (getName() != null ? !getName().equals(that.getName()) : that.getName() != null) return false;
-        return getCandidates() != null ? getCandidates().equals(that.getCandidates()) : that.getCandidates() == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = getId() != null ? getId().hashCode() : 0;
-        result = 31 * result + (getName() != null ? getName().hashCode() : 0);
-        result = 31 * result + (getCandidates() != null ? getCandidates().hashCode() : 0);
-        return result;
-    }
 }

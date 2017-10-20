@@ -1,15 +1,14 @@
 package org.renato.model.dao;
 
-import org.renato.model.pojos.Candidate;
+import org.renato.model.pojos.Candidates;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-
-public interface CandidateRepository extends CrudRepository<Candidate, Long> {
+public interface CandidatesRepository extends CrudRepository<Candidates,Long> {
 
     @Query(value = "SELECT * FROM Candidates WHERE email = :email", nativeQuery = true)
-    Candidate findCandidateByEmail(@Param("email") String email);
+    Candidates findCandidateByEmail(@Param("email") String email);
 
-    Candidate findOne(Long aLong);
+    Candidates findOne(Long aLong);
 }

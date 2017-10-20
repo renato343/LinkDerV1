@@ -2,6 +2,7 @@ package org.renato.services.user;
 
 import org.renato.model.dao.*;
 import org.renato.model.pojos.*;
+import org.renato.model.pojos.Candidates;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,10 +20,18 @@ public class UserServiceImpl implements UserService {
 
 
     @Autowired
-    private CandidateRepository candidateRepository;
+    private CandidatesRepository candidatesRepository;
 
     @Autowired
-    private CandidateRepository candidateRepository1;
+    private FrameworksRepository frameworksRepository;
+
+    @Autowired
+    private LanguagesRepository languagesRepository;
+
+
+
+
+
 
     @Autowired
     private CompanyRepository companyRepository;
@@ -30,14 +39,65 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private MatchRepository matchRepository;
 
-    @Autowired
-    private LanguagesRepository languagesRepository;
-
-    @Autowired
-    private FrameworkRepository frameworkRepository;
-
     @PersistenceContext
     private EntityManager em;
+
+
+
+    @Override
+    public Iterable<Candidates> getAllCandidates() {
+        return candidatesRepository.findAll();
+    }
+
+    @Override
+    public Candidates getCandidateById(Long id) {
+
+        return candidatesRepository.findOne(id);
+    }
+
+    @Override
+    public Candidates getCandidateByEmail(String email) {
+
+        return candidatesRepository.findCandidateByEmail(email);
+
+    }
+
+    @Transactional
+    @Override
+    public boolean addCandidate(Candidates candidate) {
+
+        if (candidatesRepository.findCandidateByEmail(candidate.getEmail()) == null) {
+
+            candidatesRepository.save(candidate);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Transactional
+    @Override
+    public boolean authCandidate(String mail, String pass) {
+
+        Candidates candidate = candidatesRepository.findCandidateByEmail(mail);
+
+        if (candidate == null) {
+            return isAuthenticate;
+        }
+
+        if (candidate.getEmail().equals(mail) && candidate.getPassword().equals(pass)) {
+            isAuthenticate = true;
+        } else {
+            isAuthenticate = false;
+        }
+
+        return isAuthenticate;
+    }
+
+    @Override
+    public Iterable<Frameworks> getAllFrameWork(){
+        return frameworksRepository.findAll();
+    }
 
     @Transactional
     @Override
@@ -46,16 +106,29 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Iterable<Frameworks> getAllFrameworks() {
-        return frameworkRepository.findAll();
+    public boolean addLanguage(Languages language) {
+
+        if(languagesRepository.findByName(language.getName())==null) {
+            languagesRepository.save(language);
+            return true;
+        }else {
+            return false;
+        }
+
     }
 
-    @Transactional
     @Override
-    public Iterable<Candidate> getAllCadets() {
-        System.out.println(candidateRepository.findAll());
-        return candidateRepository.findAll();
+    public boolean addFramework(Frameworks frameworks) {
+
+        if(frameworksRepository.findByName(frameworks.getName())==null) {
+            frameworksRepository.save(frameworks);
+            return true;
+        }else {
+            return false;
+        }
+
     }
+
 
     @Transactional
     @Override
@@ -69,28 +142,9 @@ public class UserServiceImpl implements UserService {
         return matchRepository.findAll();
     }
 
-    @Override
-    public Candidate getCandidateById(Long id) {
 
-        return candidateRepository.findOne(id);
-    }
 
-    @Override
-    public Candidate getCandidateByEmail(String email) {
-        return candidateRepository.findCandidateByEmail(email);
-    }
 
-    @Transactional
-    @Override
-    public boolean addCandidate(Candidate candidate) {
-
-        if (candidateRepository.findCandidateByEmail(candidate.getEmail()) == null) {
-            candidateRepository.save(candidate);
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     @Transactional
     @Override
@@ -120,26 +174,7 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    @Transactional
-    @Override
-    public boolean authCandidate(String mail, String pass) {
 
-
-        Candidate candidate = candidateRepository.findCandidateByEmail(mail);
-
-        if (candidate == null) {
-            return isAuthenticate;
-        }
-
-        if (candidate.getEmail().equals(mail) && candidate.getPassword().equals(pass)) {
-            isAuthenticate = true;
-        } else {
-            isAuthenticate = false;
-        }
-
-        return isAuthenticate;
-
-    }
 
 
 //
