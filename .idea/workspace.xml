@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40ac2b1e-dab1-4f1f-abfc-04b4a554a8aa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/renato/model/dao/CandidatesRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/renato/model/dao/FrameworksRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/renato/model/pojos/wrapper/Wrapper.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/renato/model/dao/CandidateRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/renato/model/dao/FrameworkRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/renato/model/pojos/Candidate.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/renato/model/pojos/Frameworks.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/renato/model/pojos/Languages.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/renato/model/dao/CandidateRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/renato/model/dao/FrameworkRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/renato/model/pojos/Candidate.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/modelDatabase.mwb" afterPath="$PROJECT_DIR$/src/main/resources/modelDatabase.mwb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/modelDatabase.mwb.bak" afterPath="$PROJECT_DIR$/src/main/resources/modelDatabase.mwb.bak" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/modelDatabase.mwb" afterPath="$PROJECT_DIR$/target/classes/modelDatabase.mwb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/modelDatabase.mwb.bak" afterPath="$PROJECT_DIR$/target/classes/modelDatabase.mwb.bak" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/renato/Controllers/CandidateController.class" afterPath="$PROJECT_DIR$/target/classes/org/renato/Controllers/CandidateController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/renato/model/pojos/Frameworks.class" afterPath="$PROJECT_DIR$/target/classes/org/renato/model/pojos/Frameworks.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/renato/model/pojos/Languages.class" afterPath="$PROJECT_DIR$/target/classes/org/renato/model/pojos/Languages.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/renato/services/user/UserService.class" afterPath="$PROJECT_DIR$/target/classes/org/renato/services/user/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/renato/services/user/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/renato/services/user/UserServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/renato/Controllers/CandidateController.java" afterPath="$PROJECT_DIR$/src/main/java/org/renato/Controllers/CandidateController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/renato/services/user/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/org/renato/services/user/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/renato/services/user/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/renato/services/user/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data.sql" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data.sql" afterPath="$PROJECT_DIR$/target/classes/data.sql" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -67,14 +43,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CandidateController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CandidateController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/Controllers/CandidateController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            <state relative-caret-position="10">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="method#addNewUser#0;class#CandidateController#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="candidates" pinned="false" current-in-tab="false">
+        <entry file="das://table:/31fefd50/61b1e7e9-1c63-4c7e-875f-7df7048745c9/tindercompany.candidates">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="companys" pinned="false" current-in-tab="true">
+        <entry file="das://table:/31fefd50/61b1e7e9-1c63-4c7e-875f-7df7048745c9/tindercompany.companys">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -186,7 +180,7 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -206,6 +200,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scratches">
         <subPane>
           <expand>
@@ -222,6 +218,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -324,9 +321,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -522,12 +516,19 @@
       <workItem from="1508315009104" duration="12367000" />
       <workItem from="1508400695429" duration="105000" />
       <workItem from="1508408040776" duration="9289000" />
-      <workItem from="1508488362202" duration="4756000" />
+      <workItem from="1508488362202" duration="5440000" />
+      <workItem from="1508515297883" duration="550000" />
+      <workItem from="1514892074392" duration="508000" />
+      <workItem from="1514903672340" duration="651000" />
+      <workItem from="1515084131256" duration="329000" />
+      <workItem from="1515084706709" duration="483000" />
+      <workItem from="1515085814539" duration="557000" />
+      <workItem from="1515153949783" duration="3137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202544000" />
+    <option name="totallyTimeSpent" value="209443000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -540,7 +541,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -549,17 +549,17 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.69899666" sideWeight="0.505295" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="16" side_tool="false" content_ui="combo" x="-1589" y="282" width="954" height="477" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41025642" sideWeight="0.5" order="16" side_tool="false" content_ui="combo" x="-1589" y="282" width="954" height="477" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20895523" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36343366" sideWeight="0.494705" order="9" side_tool="false" content_ui="tabs" x="5" y="13" width="1360" height="722" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26837608" sideWeight="0.494705" order="9" side_tool="false" content_ui="tabs" x="5" y="13" width="1360" height="722" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.295764" sideWeight="0.4960981" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15128593" sideWeight="0.4960981" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06807867" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16187595" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -587,8 +587,6 @@
         <option value="E:/LinkDerFrontEnd/app/candidates/candidate.resolver.js" />
         <option value="E:/LinkDerFrontEnd/app/candidates/shared/framework.model.js.map" />
         <option value="E:/LinkDerFrontEnd/app/candidates/shared/framework.model.js" />
-        <option value="E:/LinkDerFrontEnd/app/user/Company/loginCandidate.component.js.map" />
-        <option value="E:/LinkDerFrontEnd/app/user/Company/loginCandidate.component.js" />
       </list>
     </option>
   </component>
@@ -629,13 +627,6 @@
       </provider>
     </entry>
     <entry file="das://table:/31fefd50/61b1e7e9-1c63-4c7e-875f-7df7048745c9/tindercompany.candidate_frameworks">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/31fefd50/61b1e7e9-1c63-4c7e-875f-7df7048745c9/tindercompany.companys">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -786,7 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="1" column="36" lean-forward="false" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -798,10 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1508319769570" expanded="true" signature="344:389" ph="SELECT * FRO... Candidates" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -810,7 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,7 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="880">
           <caret line="41" column="48" lean-forward="false" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,11 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#817#818#0" expanded="false" />
-            <element signature="e#846#847#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -896,14 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#getCandidateById#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#getCandidateByEmail#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#authCandidate#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#addCompany#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#authCompany#0;class#UserServiceImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -915,13 +886,6 @@
       </provider>
     </entry>
     <entry file="das://table:/31fefd50/61b1e7e9-1c63-4c7e-875f-7df7048745c9/tindercompany.languages">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/31fefd50/61b1e7e9-1c63-4c7e-875f-7df7048745c9/tindercompany.candidates">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -940,17 +904,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
           <caret line="231" column="178" lean-forward="false" selection-start-line="231" selection-start-column="178" selection-end-line="231" selection-end-column="178" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/Controllers/CandidateController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        <state relative-caret-position="10">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="method#addNewUser#0;class#CandidateController#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/31fefd50/61b1e7e9-1c63-4c7e-875f-7df7048745c9/tindercompany.candidates">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/31fefd50/61b1e7e9-1c63-4c7e-875f-7df7048745c9/tindercompany.companys">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
