@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40ac2b1e-dab1-4f1f-abfc-04b4a554a8aa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/renato/Controllers/CandidateController.class" afterPath="$PROJECT_DIR$/target/classes/org/renato/Controllers/CandidateController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,7 +45,7 @@
       <file leaf-file-name="CandidateController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/Controllers/CandidateController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10">
+            <state relative-caret-position="242">
               <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="method#addNewUser#0;class#CandidateController#0" expanded="false" />
@@ -94,8 +93,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/renato/service/Service.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/renato/model/dao/AbstratRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/renato/model/dao/AbstractRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/renato/model/dao/CompanyRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/renato/Controllers/teste.java" />
@@ -145,6 +142,8 @@
         <option value="$PROJECT_DIR$/src/main/java/org/renato/model/pojos/Languages.java" />
         <option value="$PROJECT_DIR$/src/main/resources/data.sql" />
         <option value="$PROJECT_DIR$/src/main/java/org/renato/Controllers/CandidateController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/renato/teste.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/renato/teste3.java" />
       </list>
     </option>
   </component>
@@ -177,10 +176,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="2054" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -200,8 +199,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="Scratches">
         <subPane>
           <expand>
@@ -218,7 +216,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -257,70 +255,13 @@
               <item name="LinkDer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="renato" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LinkDer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LinkDer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="renato" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LinkDer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LinkDer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="renato" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LinkDer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LinkDer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="renato" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="pojos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LinkDer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LinkDer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="renato" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="pojos" type="462c0819:PsiDirectoryNode" />
-              <item name="wrapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LinkDer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LinkDer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="renato" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LinkDer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LinkDer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -523,12 +464,15 @@
       <workItem from="1515084131256" duration="329000" />
       <workItem from="1515084706709" duration="483000" />
       <workItem from="1515085814539" duration="557000" />
-      <workItem from="1515153949783" duration="3137000" />
+      <workItem from="1515153949783" duration="3580000" />
+      <workItem from="1515586687451" duration="1012000" />
+      <workItem from="1516025545660" duration="1936000" />
+      <workItem from="1516031064609" duration="33000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209443000" />
+    <option name="totallyTimeSpent" value="212867000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -540,26 +484,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.69899666" sideWeight="0.505295" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41025642" sideWeight="0.5" order="16" side_tool="false" content_ui="combo" x="-1589" y="282" width="954" height="477" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41025642" sideWeight="0.5" order="16" side_tool="false" content_ui="combo" x="-1589" y="282" width="954" height="477" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20895523" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26837608" sideWeight="0.494705" order="9" side_tool="false" content_ui="tabs" x="5" y="13" width="1360" height="722" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39018953" sideWeight="0.494705" order="9" side_tool="false" content_ui="tabs" x="5" y="13" width="1360" height="722" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15128593" sideWeight="0.4960981" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2835821" sideWeight="0.4960981" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16187595" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15298508" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -573,6 +516,7 @@
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33556297" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
@@ -587,6 +531,34 @@
         <option value="E:/LinkDerFrontEnd/app/candidates/candidate.resolver.js" />
         <option value="E:/LinkDerFrontEnd/app/candidates/shared/framework.model.js.map" />
         <option value="E:/LinkDerFrontEnd/app/candidates/shared/framework.model.js" />
+        <option value="E:/LinkDerFrontEnd/app/register.component.js.map" />
+        <option value="E:/LinkDerFrontEnd/app/register.component.js" />
+        <option value="E:/LinkDerFrontEnd/app/companys/company-thumb.component.js.map" />
+        <option value="E:/LinkDerFrontEnd/app/companys/company.resolver.js.map" />
+        <option value="E:/LinkDerFrontEnd/app/companys/company-list-resolver.js.map" />
+        <option value="E:/LinkDerFrontEnd/app/companys/index.js" />
+        <option value="E:/LinkDerFrontEnd/app/companys/create-company.component.js.map" />
+        <option value="E:/LinkDerFrontEnd/app/companys/company-thumb.component.js" />
+        <option value="E:/LinkDerFrontEnd/app/companys/company-list.component.js.map" />
+        <option value="E:/LinkDerFrontEnd/app/companys/index.js.map" />
+        <option value="E:/LinkDerFrontEnd/app/companys/company-list.component.js" />
+        <option value="E:/LinkDerFrontEnd/app/companys/create-company.component.js" />
+        <option value="E:/LinkDerFrontEnd/app/companys/company-list-resolver.js" />
+        <option value="E:/LinkDerFrontEnd/app/companys/company.resolver.js" />
+        <option value="E:/LinkDerFrontEnd/app/companys/shared/language.model.js" />
+        <option value="E:/LinkDerFrontEnd/app/companys/shared/framework.model.js.map" />
+        <option value="E:/LinkDerFrontEnd/app/companys/shared/company-service.js.map" />
+        <option value="E:/LinkDerFrontEnd/app/companys/shared/language.model.js.map" />
+        <option value="E:/LinkDerFrontEnd/app/companys/shared/company-service.js" />
+        <option value="E:/LinkDerFrontEnd/app/companys/shared/index.js.map" />
+        <option value="E:/LinkDerFrontEnd/app/companys/shared/company.model.js" />
+        <option value="E:/LinkDerFrontEnd/app/companys/shared/framework.model.js" />
+        <option value="E:/LinkDerFrontEnd/app/companys/shared/index.js" />
+        <option value="E:/LinkDerFrontEnd/app/companys/shared/company.model.js.map" />
+        <option value="E:/LinkDerFrontEnd/app/companys/company-details/company-details.component.js" />
+        <option value="E:/LinkDerFrontEnd/app/companys/company-details/index.js" />
+        <option value="E:/LinkDerFrontEnd/app/companys/company-details/index.js.map" />
+        <option value="E:/LinkDerFrontEnd/app/companys/company-details/company-details.component.js.map" />
       </list>
     </option>
   </component>
@@ -605,13 +577,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.16/tomcat-embed-core-8.5.16.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/31fefd50/61b1e7e9-1c63-4c7e-875f-7df7048745c9/tindercompany.candidate_frameworks">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -896,7 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -909,7 +873,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/Controllers/CandidateController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
+        <state relative-caret-position="242">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="method#addNewUser#0;class#CandidateController#0" expanded="false" />
@@ -931,6 +895,7 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/teste3.java" />
   </component>
   <component name="masterDetails">
     <states>
