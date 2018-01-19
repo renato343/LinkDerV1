@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "/candidate")
 public class CandidateController {
@@ -19,8 +21,27 @@ public class CandidateController {
 
     @GetMapping(path = "/allCandidates")
     public @ResponseBody
-    Iterable<Candidates> getAllCandidates() {
-        return userService.getAllCandidates();
+    List<Wrapper> getAllCandidates() {
+
+     Iterable<Candidates> candidates = userService.getAllCandidates();
+     List<Wrapper> wrappersIt = null;
+
+        for(Candidates candidate: candidates){
+
+            Wrapper wrapper = new Wrapper();
+            wrapper.setCandidate_Id(candidate.getCandidate_Id());
+            wrapper.setEmail(candidate.getEmail());
+            wrapper.setGithub(candidate.getGithub());
+            wrapper.setLinkedin(candidate.getLinkedin());
+            wrapper.setMotto(candidate.getMotto());
+            wrapper.setName(candidate.getName());
+            wrapper.setPassword(candidate.getPassword());
+            wrapper.setFrameworks(userService.getCandidate_FrameworksByCandidateID(candidate.getCandidate_Id()));
+
+            wrappersIt.add(wrapper);
+        }
+
+        return wrappersIt ;
     }
 
     @GetMapping(path = "/allFrameworks")

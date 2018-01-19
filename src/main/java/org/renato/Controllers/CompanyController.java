@@ -3,6 +3,8 @@ package org.renato.Controllers;
 import org.renato.model.pojos.Company;
 import org.renato.services.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController()
@@ -31,14 +33,23 @@ public class CompanyController {
     }
 
 
-    @GetMapping(path = "/auth")
+    @RequestMapping(method = RequestMethod.POST, path = "/auth")
     public @ResponseBody
-    String authenticate(@RequestParam String email, @RequestParam String pass) {
+    ResponseEntity<Company>authenticate(@RequestBody Company user) {
 
-        if (userService.authCompany(email, pass)) {
-            return "welcome " + email;
-        } else {
-            return "Wrong Pass";
+        Company company = new Company();
+
+        if (userService.getCompanyByEmail(user.getEmail()) == null) {
+            return new ResponseEntity<Company>(company, HttpStatus.NOT_FOUND);
+        }
+
+        if(userService.authCompany(user.getEmail(), user.getPassword())){
+
+            company = userService.getCompanyByEmail(user.getEmail());
+            return new ResponseEntity<Company>(company,HttpStatus.OK);
+
+        }else {
+            return new ResponseEntity<Company>(company,HttpStatus.UNAUTHORIZED);
         }
     }
 

@@ -1,6 +1,7 @@
 package org.renato.services.user;
 
 import org.renato.model.dao.*;
+import org.renato.model.dao.Candidate_frameworks;
 import org.renato.model.pojos.*;
 import org.renato.model.pojos.Candidates;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,21 +29,17 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private LanguagesRepository languagesRepository;
 
-
-
-
-
-
     @Autowired
     private CompanyRepository companyRepository;
 
     @Autowired
     private MatchRepository matchRepository;
 
+    @Autowired
+    private Candidate_frameworks candidate_frameworks;
+
     @PersistenceContext
     private EntityManager em;
-
-
 
     @Override
     public Iterable<Candidates> getAllCandidates() {
@@ -75,28 +72,22 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    @Transactional
     @Override
-    public boolean authCandidate(String mail, String pass) {
+    public Company getCompanyByEmail(String email) {
 
-        Candidates candidate = candidatesRepository.findCandidateByEmail(mail);
+        return companyRepository.findCompaniesByEmail (email);
 
-        if (candidate == null) {
-            return isAuthenticate;
-        }
-
-        if (candidate.getEmail().equals(mail) && candidate.getPassword().equals(pass)) {
-            isAuthenticate = true;
-        } else {
-            isAuthenticate = false;
-        }
-
-        return isAuthenticate;
     }
 
     @Override
     public Iterable<Frameworks> getAllFrameWork(){
         return frameworksRepository.findAll();
+    }
+
+    @Override
+    public Iterable<Frameworks> getCandidate_FrameworksByCandidateID(Long id) {
+
+        return candidate_frameworks.searchByCadetId(id);
     }
 
     @Transactional
@@ -142,10 +133,6 @@ public class UserServiceImpl implements UserService {
         return matchRepository.findAll();
     }
 
-
-
-
-
     @Transactional
     @Override
     public boolean addCompany(Company company) {
@@ -173,6 +160,26 @@ public class UserServiceImpl implements UserService {
         return isAuthenticate;
 
     }
+
+    @Transactional
+    @Override
+    public boolean authCandidate(String mail, String pass) {
+
+        Candidates candidate = candidatesRepository.findCandidateByEmail(mail);
+
+        if (candidate == null) {
+            return isAuthenticate;
+        }
+
+        if (candidate.getEmail().equals(mail) && candidate.getPassword().equals(pass)) {
+            isAuthenticate = true;
+        } else {
+            isAuthenticate = false;
+        }
+
+        return isAuthenticate;
+    }
+
 
 
 

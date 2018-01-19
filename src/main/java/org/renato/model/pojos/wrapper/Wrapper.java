@@ -3,8 +3,6 @@ package org.renato.model.pojos.wrapper;
 import org.renato.model.pojos.Frameworks;
 import org.renato.model.pojos.Languages;
 
-import java.util.List;
-
 public class Wrapper {
 
     private long candidate_Id;
@@ -14,8 +12,8 @@ public class Wrapper {
     private String motto;
     private String name;
     private String password;
-    private List<Languages> languages;
-    private List<Frameworks> frameworks;
+    private Iterable<Languages> languages;
+    private Iterable<Frameworks> frameworks;
 
     public Wrapper() {
     }
@@ -76,19 +74,19 @@ public class Wrapper {
         this.password = password;
     }
 
-    public List<Languages> getLanguages() {
+    public Iterable<Languages> getLanguages() {
         return languages;
     }
 
-    public void setLanguages(List<Languages> languages) {
+    public void setLanguages(Iterable<Languages> languages) {
         this.languages = languages;
     }
 
-    public List<Frameworks> getFrameworks() {
+    public Iterable<Frameworks> getFrameworks() {
         return frameworks;
     }
 
-    public void setFrameworks(List<Frameworks> frameworks) {
+    public void setFrameworks(Iterable<Frameworks> frameworks) {
         this.frameworks = frameworks;
     }
 }
