@@ -39,6 +39,8 @@ public interface UserService {
 
     boolean addFramework(Frameworks frameworks);
 
+    Iterable<Languages> getCandidate_LanguagesByCandidateID(Long id);
+
 
 //    void updateMatch(Match match);
 //

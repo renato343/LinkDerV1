@@ -233,7 +233,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 START TRANSACTION;
 USE `tindercompany`;
 INSERT INTO `tindercompany`.`candidates` (`candidate_id`, `email`, `github`, `linkedin`, `motto`, `name`, `password`) VALUES (1, 'renato@gmail.com', 'github', 'linkdin', 'Hello World', 'Renato', '123');
-INSERT INTO `tindercompany`.`candidates` (`candidate_id`, `email`, `github`, `linkedin`, `motto`, `name`, `password`) VALUES (2, 'marisa', 'github', 'linkdin', 'Hello People', 'Marisa', '123');
+INSERT INTO `tindercompany`.`candidates` (`candidate_id`, `email`, `github`, `linkedin`, `motto`, `name`, `password`) VALUES (2, 'marisa', 'github', 'linkdin', 'Hello Pimpolho', 'Marisa', '123');
 
 COMMIT;
 

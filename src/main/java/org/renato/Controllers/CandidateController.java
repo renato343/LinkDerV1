@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -24,7 +25,7 @@ public class CandidateController {
     List<Wrapper> getAllCandidates() {
 
      Iterable<Candidates> candidates = userService.getAllCandidates();
-     List<Wrapper> wrappersIt = null;
+     List<Wrapper> wrappersIt = new ArrayList<>();
 
         for(Candidates candidate: candidates){
 
@@ -37,6 +38,7 @@ public class CandidateController {
             wrapper.setName(candidate.getName());
             wrapper.setPassword(candidate.getPassword());
             wrapper.setFrameworks(userService.getCandidate_FrameworksByCandidateID(candidate.getCandidate_Id()));
+            wrapper.setLanguages(userService.getCandidate_LanguagesByCandidateID(candidate.getCandidate_Id()));
 
             wrappersIt.add(wrapper);
         }

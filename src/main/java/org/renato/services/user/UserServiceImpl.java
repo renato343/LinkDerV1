@@ -1,7 +1,6 @@
 package org.renato.services.user;
 
 import org.renato.model.dao.*;
-import org.renato.model.dao.Candidate_frameworks;
 import org.renato.model.pojos.*;
 import org.renato.model.pojos.Candidates;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,9 +33,6 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private MatchRepository matchRepository;
-
-    @Autowired
-    private Candidate_frameworks candidate_frameworks;
 
     @PersistenceContext
     private EntityManager em;
@@ -87,7 +83,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public Iterable<Frameworks> getCandidate_FrameworksByCandidateID(Long id) {
 
-        return candidate_frameworks.searchByCadetId(id);
+        return frameworksRepository.searchByCadetId(id);
     }
 
     @Transactional
@@ -118,6 +114,11 @@ public class UserServiceImpl implements UserService {
             return false;
         }
 
+    }
+
+    @Override
+    public Iterable<Languages> getCandidate_LanguagesByCandidateID(Long id) {
+        return languagesRepository.searchByCadetId(id);
     }
 
 
