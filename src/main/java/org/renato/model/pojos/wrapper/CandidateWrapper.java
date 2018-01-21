@@ -3,7 +3,7 @@ package org.renato.model.pojos.wrapper;
 import org.renato.model.pojos.Frameworks;
 import org.renato.model.pojos.Languages;
 
-public class Wrapper {
+public class CandidateWrapper {
 
     private long candidate_Id;
     private String email;
@@ -15,7 +15,7 @@ public class Wrapper {
     private Iterable<Languages> languages;
     private Iterable<Frameworks> frameworks;
 
-    public Wrapper() {
+    public CandidateWrapper() {
     }
 
     public long getCandidate_Id() {

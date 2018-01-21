@@ -34,6 +34,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private MatchRepository matchRepository;
 
+    @Autowired
+    private ProjectsRepository projectsRepository;
+
     @PersistenceContext
     private EntityManager em;
 
@@ -119,6 +122,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public Iterable<Languages> getCandidate_LanguagesByCandidateID(Long id) {
         return languagesRepository.searchByCadetId(id);
+    }
+
+    @Override
+    public Iterable<Projects> getProjectsByCompany(Long company_id) {
+       return projectsRepository.findProjectByCompanyId(company_id);
     }
 
 

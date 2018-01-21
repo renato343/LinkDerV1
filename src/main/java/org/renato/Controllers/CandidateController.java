@@ -3,7 +3,7 @@ package org.renato.Controllers;
 import org.renato.model.pojos.Candidates;
 import org.renato.model.pojos.Frameworks;
 import org.renato.model.pojos.Languages;
-import org.renato.model.pojos.wrapper.Wrapper;
+import org.renato.model.pojos.wrapper.CandidateWrapper;
 import org.renato.services.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,14 +22,14 @@ public class CandidateController {
 
     @GetMapping(path = "/allCandidates")
     public @ResponseBody
-    List<Wrapper> getAllCandidates() {
+    List<CandidateWrapper> getAllCandidates() {
 
      Iterable<Candidates> candidates = userService.getAllCandidates();
-     List<Wrapper> wrappersIt = new ArrayList<>();
+     List<CandidateWrapper> wrappersIt = new ArrayList<>();
 
         for(Candidates candidate: candidates){
 
-            Wrapper wrapper = new Wrapper();
+            CandidateWrapper wrapper = new CandidateWrapper();
             wrapper.setCandidate_Id(candidate.getCandidate_Id());
             wrapper.setEmail(candidate.getEmail());
             wrapper.setGithub(candidate.getGithub());
@@ -60,7 +60,7 @@ public class CandidateController {
 
     @RequestMapping(method=RequestMethod.POST ,path = "/addCandidate")
     public @ResponseBody
-    String addNewUser(@RequestBody Wrapper candidate) {
+    String addNewUser(@RequestBody CandidateWrapper candidate) {
 
         for (Languages language:candidate.getLanguages()) {
 

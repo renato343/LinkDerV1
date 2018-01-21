@@ -14,7 +14,7 @@ public class Company {
     @Id
     @Column(name = "company_id")
     @GeneratedValue( strategy = GenerationType.AUTO)
-    private Integer company_id;
+    private Long company_id;
 
     @Column (name = "email")
     private String email;
@@ -29,6 +29,7 @@ public class Company {
     private String motto;
 
     public Company() {
+
     }
 
     public Company(String password, String email, String name, String motto) {
@@ -38,11 +39,11 @@ public class Company {
         this.motto = motto;
     }
 
-    public Integer getCompany_id() {
+    public Long getCompany_id() {
         return company_id;
     }
 
-    public void setCompany_id(Integer company_id) {
+    public void setCompany_id(Long company_id) {
         this.company_id = company_id;
     }
 

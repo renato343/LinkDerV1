@@ -41,6 +41,8 @@ public interface UserService {
 
     Iterable<Languages> getCandidate_LanguagesByCandidateID(Long id);
 
+    Iterable<Projects> getProjectsByCompany(Long company_id);
+
 
 //    void updateMatch(Match match);
 //

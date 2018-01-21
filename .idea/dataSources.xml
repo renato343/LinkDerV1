@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="tindercompany@localhost" uuid="61b1e7e9-1c63-4c7e-875f-7df7048745c9">
+    <data-source source="LOCAL" name="linkder@localhost" uuid="0ce5af68-549a-4625-a54d-82372cef99ca">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/tindercompany</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/linkder</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
