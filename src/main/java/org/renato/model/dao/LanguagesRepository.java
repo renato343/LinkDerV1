@@ -9,10 +9,10 @@ public interface LanguagesRepository extends CrudRepository<Languages,Long> {
     Languages findByName(String name);
 
     @Query(value = "SELECT * FROM languages " +
-            "WHERE language_id IN " +
-            "(SELECT candidates_candidate_id " +
+            "WHERE language_id " +
+            "IN (SELECT candidates_id " +
             "FROM candidate_languages " +
-            "where candidates_candidate_id = ?1)", nativeQuery = true)
+            "where candidates_id = ?1)", nativeQuery = true)
     Iterable<Languages> searchByCadetId(Long id);
 
 }

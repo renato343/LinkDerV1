@@ -115,6 +115,12 @@ public class CandidateController {
         }
     }
 
+    @RequestMapping(method = RequestMethod.POST, path ="/logout")
+    public @ResponseBody
+    String logout () {
+        return "logged Out";
+    }
+
     @GetMapping(path = "/id")
     public @ResponseBody
     Candidates getCandidateById(@RequestParam long id) {
