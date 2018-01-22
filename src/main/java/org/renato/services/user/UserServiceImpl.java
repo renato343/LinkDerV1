@@ -28,21 +28,17 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private LanguagesRepository languagesRepository;
 
-
-
-
-
-
     @Autowired
     private CompanyRepository companyRepository;
 
     @Autowired
     private MatchRepository matchRepository;
 
+    @Autowired
+    private ProjectsRepository projectsRepository;
+
     @PersistenceContext
     private EntityManager em;
-
-
 
     @Override
     public Iterable<Candidates> getAllCandidates() {
@@ -75,28 +71,22 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    @Transactional
     @Override
-    public boolean authCandidate(String mail, String pass) {
+    public Company getCompanyByEmail(String email) {
 
-        Candidates candidate = candidatesRepository.findCandidateByEmail(mail);
+        return companyRepository.findCompaniesByEmail (email);
 
-        if (candidate == null) {
-            return isAuthenticate;
-        }
-
-        if (candidate.getEmail().equals(mail) && candidate.getPassword().equals(pass)) {
-            isAuthenticate = true;
-        } else {
-            isAuthenticate = false;
-        }
-
-        return isAuthenticate;
     }
 
     @Override
     public Iterable<Frameworks> getAllFrameWork(){
         return frameworksRepository.findAll();
+    }
+
+    @Override
+    public Iterable<Frameworks> getCandidate_FrameworksByCandidateID(Long id) {
+
+        return frameworksRepository.searchByCadetId(id);
     }
 
     @Transactional
@@ -129,6 +119,16 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public Iterable<Languages> getCandidate_LanguagesByCandidateID(Long id) {
+        return languagesRepository.searchByCadetId(id);
+    }
+
+    @Override
+    public Iterable<Projects> getProjectsByCompany(Long company_id) {
+       return projectsRepository.findProjectByCompanyId(company_id);
+    }
+
 
     @Transactional
     @Override
@@ -141,10 +141,6 @@ public class UserServiceImpl implements UserService {
     public Iterable<Match> getAllMatches() {
         return matchRepository.findAll();
     }
-
-
-
-
 
     @Transactional
     @Override
@@ -173,6 +169,26 @@ public class UserServiceImpl implements UserService {
         return isAuthenticate;
 
     }
+
+    @Transactional
+    @Override
+    public boolean authCandidate(String mail, String pass) {
+
+        Candidates candidate = candidatesRepository.findCandidateByEmail(mail);
+
+        if (candidate == null) {
+            return isAuthenticate;
+        }
+
+        if (candidate.getEmail().equals(mail) && candidate.getPassword().equals(pass)) {
+            isAuthenticate = true;
+        } else {
+            isAuthenticate = false;
+        }
+
+        return isAuthenticate;
+    }
+
 
 
 

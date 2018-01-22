@@ -3,12 +3,15 @@ package org.renato.Controllers;
 import org.renato.model.pojos.Candidates;
 import org.renato.model.pojos.Frameworks;
 import org.renato.model.pojos.Languages;
-import org.renato.model.pojos.wrapper.Wrapper;
+import org.renato.model.pojos.wrapper.CandidateWrapper;
 import org.renato.services.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "/candidate")
@@ -19,8 +22,28 @@ public class CandidateController {
 
     @GetMapping(path = "/allCandidates")
     public @ResponseBody
-    Iterable<Candidates> getAllCandidates() {
-        return userService.getAllCandidates();
+    List<CandidateWrapper> getAllCandidates() {
+
+     Iterable<Candidates> candidates = userService.getAllCandidates();
+     List<CandidateWrapper> wrappersIt = new ArrayList<>();
+
+        for(Candidates candidate: candidates){
+
+            CandidateWrapper wrapper = new CandidateWrapper();
+            wrapper.setCandidate_Id(candidate.getCandidate_Id());
+            wrapper.setEmail(candidate.getEmail());
+            wrapper.setGithub(candidate.getGithub());
+            wrapper.setLinkedin(candidate.getLinkedin());
+            wrapper.setMotto(candidate.getMotto());
+            wrapper.setName(candidate.getName());
+            wrapper.setPassword(candidate.getPassword());
+            wrapper.setFrameworks(userService.getCandidate_FrameworksByCandidateID(candidate.getCandidate_Id()));
+            wrapper.setLanguages(userService.getCandidate_LanguagesByCandidateID(candidate.getCandidate_Id()));
+
+            wrappersIt.add(wrapper);
+        }
+
+        return wrappersIt ;
     }
 
     @GetMapping(path = "/allFrameworks")
@@ -37,7 +60,7 @@ public class CandidateController {
 
     @RequestMapping(method=RequestMethod.POST ,path = "/addCandidate")
     public @ResponseBody
-    String addNewUser(@RequestBody Wrapper candidate) {
+    String addNewUser(@RequestBody CandidateWrapper candidate) {
 
         for (Languages language:candidate.getLanguages()) {
 

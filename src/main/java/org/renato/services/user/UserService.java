@@ -1,7 +1,6 @@
 package org.renato.services.user;
 
 import org.renato.model.pojos.*;
-import org.renato.model.pojos.Candidates;
 
 public interface UserService {
 
@@ -20,6 +19,7 @@ public interface UserService {
     Iterable<Frameworks> getAllFrameWork();
 
 
+    Iterable<Frameworks> getCandidate_FrameworksByCandidateID(Long id);
 
 
     Iterable<Company> getAllCompanies();
@@ -29,9 +29,7 @@ public interface UserService {
     Iterable<Languages> getAllLanguages();
 
 
-
-
-
+    Company getCompanyByEmail(String email);
 
     boolean addCompany(Company company);
 
@@ -40,6 +38,10 @@ public interface UserService {
     boolean addLanguage(Languages language);
 
     boolean addFramework(Frameworks frameworks);
+
+    Iterable<Languages> getCandidate_LanguagesByCandidateID(Long id);
+
+    Iterable<Projects> getProjectsByCompany(Long company_id);
 
 
 //    void updateMatch(Match match);

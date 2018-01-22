@@ -5,22 +5,22 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema tindercompany
+-- Schema linkder
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `tindercompany` ;
+DROP SCHEMA IF EXISTS `linkder` ;
 
 -- -----------------------------------------------------
--- Schema tindercompany
+-- Schema linkder
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `tindercompany` DEFAULT CHARACTER SET utf8 ;
-USE `tindercompany` ;
+CREATE SCHEMA IF NOT EXISTS `linkder` DEFAULT CHARACTER SET utf8 ;
+USE `linkder` ;
 
 -- -----------------------------------------------------
--- Table `tindercompany`.`candidates`
+-- Table `linkder`.`candidates`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `tindercompany`.`candidates` ;
+DROP TABLE IF EXISTS `linkder`.`candidates` ;
 
-CREATE TABLE IF NOT EXISTS `tindercompany`.`candidates` (
+CREATE TABLE IF NOT EXISTS `linkder`.`candidates` (
   `candidate_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(255) NULL DEFAULT NULL,
   `github` VARCHAR(255) NULL DEFAULT NULL,
@@ -35,12 +35,12 @@ CREATE TABLE IF NOT EXISTS `tindercompany`.`candidates` (
 
 
 -- -----------------------------------------------------
--- Table `tindercompany`.`companys`
+-- Table `linkder`.`companys`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `tindercompany`.`companys` ;
+DROP TABLE IF EXISTS `linkder`.`companys` ;
 
-CREATE TABLE IF NOT EXISTS `tindercompany`.`companys` (
-  `company_id` INT(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `linkder`.`companys` (
+  `company_id` BIGINT(20) NOT NULL,
   `email` VARCHAR(255) NULL DEFAULT NULL,
   `motto` VARCHAR(255) NULL DEFAULT NULL,
   `name` VARCHAR(255) NULL DEFAULT NULL,
@@ -51,11 +51,11 @@ CREATE TABLE IF NOT EXISTS `tindercompany`.`companys` (
 
 
 -- -----------------------------------------------------
--- Table `tindercompany`.`languages`
+-- Table `linkder`.`languages`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `tindercompany`.`languages` ;
+DROP TABLE IF EXISTS `linkder`.`languages` ;
 
-CREATE TABLE IF NOT EXISTS `tindercompany`.`languages` (
+CREATE TABLE IF NOT EXISTS `linkder`.`languages` (
   `language_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`language_id`),
@@ -66,20 +66,20 @@ CREATE TABLE IF NOT EXISTS `tindercompany`.`languages` (
 
 
 -- -----------------------------------------------------
--- Table `tindercompany`.`frameworks`
+-- Table `linkder`.`frameworks`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `tindercompany`.`frameworks` ;
+DROP TABLE IF EXISTS `linkder`.`frameworks` ;
 
-CREATE TABLE IF NOT EXISTS `tindercompany`.`frameworks` (
+CREATE TABLE IF NOT EXISTS `linkder`.`frameworks` (
   `framework_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
-  `languages_language_id` BIGINT(20) NOT NULL,
+  `language_id` BIGINT(20) NOT NULL,
   PRIMARY KEY (`framework_id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC),
-  INDEX `fk_frameworks_languages1_idx` (`languages_language_id` ASC),
+  INDEX `fk_frameworks_languages1_idx` (`language_id` ASC),
   CONSTRAINT `fk_frameworks_languages1`
-  FOREIGN KEY (`languages_language_id`)
-  REFERENCES `tindercompany`.`languages` (`language_id`)
+  FOREIGN KEY (`language_id`)
+  REFERENCES `linkder`.`languages` (`language_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
   ENGINE = InnoDB
@@ -88,11 +88,11 @@ CREATE TABLE IF NOT EXISTS `tindercompany`.`frameworks` (
 
 
 -- -----------------------------------------------------
--- Table `tindercompany`.`match_table`
+-- Table `linkder`.`match_table`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `tindercompany`.`match_table` ;
+DROP TABLE IF EXISTS `linkder`.`match_table` ;
 
-CREATE TABLE IF NOT EXISTS `tindercompany`.`match_table` (
+CREATE TABLE IF NOT EXISTS `linkder`.`match_table` (
   `match_id` INT(11) NOT NULL AUTO_INCREMENT,
   `candidate_bol` BIT(1) NULL DEFAULT b'0',
   `candidate_id` INT(11) NULL DEFAULT NULL,
@@ -104,43 +104,36 @@ CREATE TABLE IF NOT EXISTS `tindercompany`.`match_table` (
 
 
 -- -----------------------------------------------------
--- Table `tindercompany`.`Projects`
+-- Table `linkder`.`projects`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `tindercompany`.`Projects` ;
+DROP TABLE IF EXISTS `linkder`.`projects` ;
 
-CREATE TABLE IF NOT EXISTS `tindercompany`.`Projects` (
+CREATE TABLE IF NOT EXISTS `linkder`.`projects` (
   `project_id` BIGINT(20) NOT NULL,
   `Name` VARCHAR(45) NULL,
-  `companys_company_id` INT(11) NOT NULL,
-  PRIMARY KEY (`project_id`),
-  INDEX `fk_Projects_companys1_idx` (`companys_company_id` ASC),
-  CONSTRAINT `fk_Projects_companys1`
-  FOREIGN KEY (`companys_company_id`)
-  REFERENCES `tindercompany`.`companys` (`company_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`project_id`))
   ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `tindercompany`.`candidate_languages`
+-- Table `linkder`.`candidate_languages`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `tindercompany`.`candidate_languages` ;
+DROP TABLE IF EXISTS `linkder`.`candidate_languages` ;
 
-CREATE TABLE IF NOT EXISTS `tindercompany`.`candidate_languages` (
-  `candidates_candidate_id` BIGINT(20) NOT NULL,
-  `languages_language_id` BIGINT(20) NOT NULL,
-  PRIMARY KEY (`candidates_candidate_id`, `languages_language_id`),
-  INDEX `fk_candidates_has_languages_languages1_idx` (`languages_language_id` ASC),
-  INDEX `fk_candidates_has_languages_candidates1_idx` (`candidates_candidate_id` ASC),
+CREATE TABLE IF NOT EXISTS `linkder`.`candidate_languages` (
+  `candidates_id` BIGINT(20) NOT NULL,
+  `languages_id` BIGINT(20) NOT NULL,
+  PRIMARY KEY (`candidates_id`, `languages_id`),
+  INDEX `fk_candidates_has_languages_languages1_idx` (`languages_id` ASC),
+  INDEX `fk_candidates_has_languages_candidates1_idx` (`candidates_id` ASC),
   CONSTRAINT `fk_candidates_has_languages_candidates1`
-  FOREIGN KEY (`candidates_candidate_id`)
-  REFERENCES `tindercompany`.`candidates` (`candidate_id`)
+  FOREIGN KEY (`candidates_id`)
+  REFERENCES `linkder`.`candidates` (`candidate_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_candidates_has_languages_languages1`
-  FOREIGN KEY (`languages_language_id`)
-  REFERENCES `tindercompany`.`languages` (`language_id`)
+  FOREIGN KEY (`languages_id`)
+  REFERENCES `linkder`.`languages` (`language_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
   ENGINE = InnoDB
@@ -148,24 +141,24 @@ CREATE TABLE IF NOT EXISTS `tindercompany`.`candidate_languages` (
 
 
 -- -----------------------------------------------------
--- Table `tindercompany`.`candidate_frameworks`
+-- Table `linkder`.`candidate_frameworks`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `tindercompany`.`candidate_frameworks` ;
+DROP TABLE IF EXISTS `linkder`.`candidate_frameworks` ;
 
-CREATE TABLE IF NOT EXISTS `tindercompany`.`candidate_frameworks` (
-  `candidates_candidate_id` BIGINT(20) NOT NULL,
-  `frameworks_framework_id` BIGINT(20) NOT NULL,
-  PRIMARY KEY (`candidates_candidate_id`, `frameworks_framework_id`),
-  INDEX `fk_candidates_has_frameworks_frameworks1_idx` (`frameworks_framework_id` ASC),
-  INDEX `fk_candidates_has_frameworks_candidates1_idx` (`candidates_candidate_id` ASC),
+CREATE TABLE IF NOT EXISTS `linkder`.`candidate_frameworks` (
+  `candidate_id` BIGINT(20) NOT NULL,
+  `framework_id` BIGINT(20) NOT NULL,
+  PRIMARY KEY (`candidate_id`, `framework_id`),
+  INDEX `fk_candidates_has_frameworks_frameworks1_idx` (`framework_id` ASC),
+  INDEX `fk_candidates_has_frameworks_candidates1_idx` (`candidate_id` ASC),
   CONSTRAINT `fk_candidates_has_frameworks_candidates1`
-  FOREIGN KEY (`candidates_candidate_id`)
-  REFERENCES `tindercompany`.`candidates` (`candidate_id`)
+  FOREIGN KEY (`candidate_id`)
+  REFERENCES `linkder`.`candidates` (`candidate_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_candidates_has_frameworks_frameworks1`
-  FOREIGN KEY (`frameworks_framework_id`)
-  REFERENCES `tindercompany`.`frameworks` (`framework_id`)
+  FOREIGN KEY (`framework_id`)
+  REFERENCES `linkder`.`frameworks` (`framework_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
   ENGINE = InnoDB
@@ -173,51 +166,101 @@ CREATE TABLE IF NOT EXISTS `tindercompany`.`candidate_frameworks` (
 
 
 -- -----------------------------------------------------
--- Table `tindercompany`.`Projects_languages`
+-- Table `linkder`.`projects_languages`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `tindercompany`.`Projects_languages` ;
+DROP TABLE IF EXISTS `linkder`.`projects_languages` ;
 
-CREATE TABLE IF NOT EXISTS `tindercompany`.`Projects_languages` (
-  `Projects_project_id` BIGINT(20) NOT NULL,
-  `languages_language_id` BIGINT(20) NOT NULL,
-  PRIMARY KEY (`Projects_project_id`, `languages_language_id`),
-  INDEX `fk_Projects_has_languages_languages1_idx` (`languages_language_id` ASC),
-  INDEX `fk_Projects_has_languages_Projects1_idx` (`Projects_project_id` ASC),
+CREATE TABLE IF NOT EXISTS `linkder`.`projects_languages` (
+  `project_id` BIGINT(20) NOT NULL,
+  `language_id` BIGINT(20) NOT NULL,
+  PRIMARY KEY (`project_id`, `language_id`),
+  INDEX `fk_Projects_has_languages_languages1_idx` (`language_id` ASC),
+  INDEX `fk_Projects_has_languages_Projects1_idx` (`project_id` ASC),
   CONSTRAINT `fk_Projects_has_languages_Projects1`
-  FOREIGN KEY (`Projects_project_id`)
-  REFERENCES `tindercompany`.`Projects` (`project_id`)
+  FOREIGN KEY (`project_id`)
+  REFERENCES `linkder`.`projects` (`project_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Projects_has_languages_languages1`
-  FOREIGN KEY (`languages_language_id`)
-  REFERENCES `tindercompany`.`languages` (`language_id`)
+  FOREIGN KEY (`language_id`)
+  REFERENCES `linkder`.`languages` (`language_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
   ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `tindercompany`.`Projects_frameworks`
+-- Table `linkder`.`projects_frameworks`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `tindercompany`.`Projects_frameworks` ;
+DROP TABLE IF EXISTS `linkder`.`projects_frameworks` ;
 
-CREATE TABLE IF NOT EXISTS `tindercompany`.`Projects_frameworks` (
-  `Projects_project_id` BIGINT(20) NOT NULL,
-  `frameworks_framework_id` BIGINT(20) NOT NULL,
-  PRIMARY KEY (`Projects_project_id`, `frameworks_framework_id`),
-  INDEX `fk_Projects_has_frameworks_frameworks1_idx` (`frameworks_framework_id` ASC),
-  INDEX `fk_Projects_has_frameworks_Projects1_idx` (`Projects_project_id` ASC),
+CREATE TABLE IF NOT EXISTS `linkder`.`projects_frameworks` (
+  `projects_id` BIGINT(20) NOT NULL,
+  `framework_id` BIGINT(20) NOT NULL,
+  PRIMARY KEY (`projects_id`, `framework_id`),
+  INDEX `fk_Projects_has_frameworks_frameworks1_idx` (`framework_id` ASC),
+  INDEX `fk_Projects_has_frameworks_Projects1_idx` (`projects_id` ASC),
   CONSTRAINT `fk_Projects_has_frameworks_Projects1`
-  FOREIGN KEY (`Projects_project_id`)
-  REFERENCES `tindercompany`.`Projects` (`project_id`)
+  FOREIGN KEY (`projects_id`)
+  REFERENCES `linkder`.`projects` (`project_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Projects_has_frameworks_frameworks1`
-  FOREIGN KEY (`frameworks_framework_id`)
-  REFERENCES `tindercompany`.`frameworks` (`framework_id`)
+  FOREIGN KEY (`framework_id`)
+  REFERENCES `linkder`.`frameworks` (`framework_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
   ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `linkder`.`companys_projects`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `linkder`.`companys_projects` ;
+
+CREATE TABLE IF NOT EXISTS `linkder`.`companys_projects` (
+  `companys_id` BIGINT(20) NOT NULL,
+  `Projects_id` BIGINT(20) NOT NULL,
+  PRIMARY KEY (`companys_id`, `Projects_id`),
+  INDEX `fk_companys_has_Projects_Projects1_idx` (`Projects_id` ASC),
+  INDEX `fk_companys_has_Projects_companys1_idx` (`companys_id` ASC),
+  CONSTRAINT `fk_companys_has_Projects_companys1`
+  FOREIGN KEY (`companys_id`)
+  REFERENCES `linkder`.`companys` (`company_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_companys_has_Projects_Projects1`
+  FOREIGN KEY (`Projects_id`)
+  REFERENCES `linkder`.`projects` (`project_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+  ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `linkder`.`candidates_projects`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `linkder`.`candidates_projects` ;
+
+CREATE TABLE IF NOT EXISTS `linkder`.`candidates_projects` (
+  `candidates_id` BIGINT(20) NOT NULL,
+  `project_id` BIGINT(20) NOT NULL,
+  PRIMARY KEY (`candidates_id`, `project_id`),
+  INDEX `fk_candidates_has_Projects_Projects1_idx` (`project_id` ASC),
+  INDEX `fk_candidates_has_Projects_candidates1_idx` (`candidates_id` ASC),
+  CONSTRAINT `fk_candidates_has_Projects_candidates1`
+  FOREIGN KEY (`candidates_id`)
+  REFERENCES `linkder`.`candidates` (`candidate_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_candidates_has_Projects_Projects1`
+  FOREIGN KEY (`project_id`)
+  REFERENCES `linkder`.`projects` (`project_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+  ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
@@ -225,57 +268,119 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
--- Data for table `tindercompany`.`candidates`
+-- Data for table `linkder`.`candidates`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `tindercompany`;
-INSERT INTO `tindercompany`.`candidates` (`candidate_id`, `email`, `github`, `linkedin`, `motto`, `name`, `password`) VALUES (1, 'renato@gmail.com', 'https://github.com/renato343', 'https://www.linkedin.com/in/rsslopes/', 'Hello World', 'Renato', '123');
-INSERT INTO `tindercompany`.`candidates` (`candidate_id`, `email`, `github`, `linkedin`, `motto`, `name`, `password`) VALUES (2, 'marisa', 'github', 'linkdin', 'Hello People', 'Marisa', '123');
+USE `linkder`;
+INSERT INTO `linkder`.`candidates` (`candidate_id`, `email`, `github`, `linkedin`, `motto`, `name`, `password`) VALUES (1, 'renato@gmail.com', 'github', 'linkdin', 'Hello World', 'Renato', '123');
+INSERT INTO `linkder`.`candidates` (`candidate_id`, `email`, `github`, `linkedin`, `motto`, `name`, `password`) VALUES (2, 'marisa', 'github', 'linkdin', 'Hello People', 'Marisa', '123');
 
 COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `tindercompany`.`languages`
+-- Data for table `linkder`.`companys`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `tindercompany`;
-INSERT INTO `tindercompany`.`languages` (`language_id`, `name`) VALUES (1, 'JAVA');
-INSERT INTO `tindercompany`.`languages` (`language_id`, `name`) VALUES (2, 'C#');
+USE `linkder`;
+INSERT INTO `linkder`.`companys` (`company_id`, `email`, `motto`, `name`, `password`) VALUES (1, 'altran@altran.com', 'We\'re french', 'Altran', '123');
+INSERT INTO `linkder`.`companys` (`company_id`, `email`, `motto`, `name`, `password`) VALUES (2, 'logicalis', 'We\'re Fuition', 'Logicallis', '123');
+INSERT INTO `linkder`.`companys` (`company_id`, `email`, `motto`, `name`, `password`) VALUES (3, 'academia@codigo.com', 'We\'re Crazy', 'Academia', '123');
 
 COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `tindercompany`.`frameworks`
+-- Data for table `linkder`.`languages`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `tindercompany`;
-INSERT INTO `tindercompany`.`frameworks` (`framework_id`, `name`, `languages_language_id`) VALUES (1, 'Spring', 1);
-INSERT INTO `tindercompany`.`frameworks` (`framework_id`, `name`, `languages_language_id`) VALUES (2, '.Net', 2);
-INSERT INTO `tindercompany`.`frameworks` (`framework_id`, `name`, `languages_language_id`) VALUES (3, 'Maven', 1);
+USE `linkder`;
+INSERT INTO `linkder`.`languages` (`language_id`, `name`) VALUES (1, 'JAVA');
+INSERT INTO `linkder`.`languages` (`language_id`, `name`) VALUES (2, 'C#');
+INSERT INTO `linkder`.`languages` (`language_id`, `name`) VALUES (3, 'JavaScript');
 
 COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `tindercompany`.`candidate_languages`
+-- Data for table `linkder`.`frameworks`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `tindercompany`;
-INSERT INTO `tindercompany`.`candidate_languages` (`candidates_candidate_id`, `languages_language_id`) VALUES (1, 1);
-INSERT INTO `tindercompany`.`candidate_languages` (`candidates_candidate_id`, `languages_language_id`) VALUES (2, 2);
+USE `linkder`;
+INSERT INTO `linkder`.`frameworks` (`framework_id`, `name`, `language_id`) VALUES (1, 'Spring', 1);
+INSERT INTO `linkder`.`frameworks` (`framework_id`, `name`, `language_id`) VALUES (2, '.Net', 2);
+INSERT INTO `linkder`.`frameworks` (`framework_id`, `name`, `language_id`) VALUES (3, 'Maven', 1);
 
 COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `tindercompany`.`candidate_frameworks`
+-- Data for table `linkder`.`projects`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `tindercompany`;
-INSERT INTO `tindercompany`.`candidate_frameworks` (`candidates_candidate_id`, `frameworks_framework_id`) VALUES (1, 1);
-INSERT INTO `tindercompany`.`candidate_frameworks` (`candidates_candidate_id`, `frameworks_framework_id`) VALUES (2, 2);
+USE `linkder`;
+INSERT INTO `linkder`.`projects` (`project_id`, `Name`) VALUES (1, 'Axa');
+INSERT INTO `linkder`.`projects` (`project_id`, `Name`) VALUES (2, 'ClientNow');
+INSERT INTO `linkder`.`projects` (`project_id`, `Name`) VALUES (3, 'bootcamp ');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `linkder`.`candidate_languages`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `linkder`;
+INSERT INTO `linkder`.`candidate_languages` (`candidates_id`, `languages_id`) VALUES (1, 1);
+INSERT INTO `linkder`.`candidate_languages` (`candidates_id`, `languages_id`) VALUES (2, 2);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `linkder`.`candidate_frameworks`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `linkder`;
+INSERT INTO `linkder`.`candidate_frameworks` (`candidate_id`, `framework_id`) VALUES (1, 1);
+INSERT INTO `linkder`.`candidate_frameworks` (`candidate_id`, `framework_id`) VALUES (2, 2);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `linkder`.`projects_languages`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `linkder`;
+INSERT INTO `linkder`.`projects_languages` (`project_id`, `language_id`) VALUES (1, 2);
+INSERT INTO `linkder`.`projects_languages` (`project_id`, `language_id`) VALUES (2, 3);
+INSERT INTO `linkder`.`projects_languages` (`project_id`, `language_id`) VALUES (3, 1);
+INSERT INTO `linkder`.`projects_languages` (`project_id`, `language_id`) VALUES (3, 3);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `linkder`.`projects_frameworks`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `linkder`;
+INSERT INTO `linkder`.`projects_frameworks` (`projects_id`, `framework_id`) VALUES (1, 2);
+INSERT INTO `linkder`.`projects_frameworks` (`projects_id`, `framework_id`) VALUES (3, 1);
+INSERT INTO `linkder`.`projects_frameworks` (`projects_id`, `framework_id`) VALUES (3, 3);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `linkder`.`companys_projects`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `linkder`;
+INSERT INTO `linkder`.`companys_projects` (`companys_id`, `Projects_id`) VALUES (1, 1);
+INSERT INTO `linkder`.`companys_projects` (`companys_id`, `Projects_id`) VALUES (2, 2);
+INSERT INTO `linkder`.`companys_projects` (`companys_id`, `Projects_id`) VALUES (3, 3);
 
 COMMIT;
 
