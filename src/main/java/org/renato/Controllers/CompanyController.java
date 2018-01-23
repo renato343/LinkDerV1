@@ -18,11 +18,9 @@ public class CompanyController {
     @Autowired
     private UserService userService;
 
-
     @GetMapping(path = "/addCompany") // Map ONLY GET Requests
     public @ResponseBody
-    String addNewUser(@RequestParam String name
-            , @RequestParam String email) {
+    String addNewUser(@RequestParam String name, @RequestParam String email) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
@@ -35,7 +33,6 @@ public class CompanyController {
             return "User already register";
         }
     }
-
 
     @RequestMapping(method = RequestMethod.POST, path = "/auth")
     public @ResponseBody
@@ -57,6 +54,12 @@ public class CompanyController {
         }
     }
 
+    @RequestMapping(method = RequestMethod.POST, path = "/logout") // Map ONLY GET Requests
+    public @ResponseBody
+    String logout () {
+        return "logged Out";
+    }
+
     @GetMapping(path = "/allCompanies")
     public @ResponseBody
     Iterable<CompanyWrapper> getAllCompanies() {
@@ -76,11 +79,14 @@ public class CompanyController {
             cw.setProjectsList(userService.getProjectsByCompany(company.getCompany_id()));
 
             companyWrapperList.add(cw);
-
         });
-
-
         return companyWrapperList;
+    }
+
+    @GetMapping(path = "/id")
+    public @ResponseBody
+    Company getCompanyById(@RequestParam long id) {
+        return userService.getCompanyById(id);
     }
 
 

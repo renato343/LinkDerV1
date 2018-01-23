@@ -16,9 +16,6 @@ public class UserServiceImpl implements UserService {
 
     private boolean isAuthenticate = false;
 
-    private boolean isCompany = true;
-
-
     @Autowired
     private CandidatesRepository candidatesRepository;
 
@@ -129,6 +126,10 @@ public class UserServiceImpl implements UserService {
        return projectsRepository.findProjectByCompanyId(company_id);
     }
 
+    @Override
+    public Company getCompanyById(long id) {
+       return companyRepository.findOne(id);
+    }
 
     @Transactional
     @Override

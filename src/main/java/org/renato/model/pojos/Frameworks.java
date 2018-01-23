@@ -12,7 +12,7 @@ public class Frameworks {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long framework_Id;
   private String name;
-  private long languages_Language_Id;
+  private long language_id;
 
 
   public long getFramework_Id() {
@@ -34,11 +34,11 @@ public class Frameworks {
 
 
   public long getLanguages_Language_Id() {
-    return languages_Language_Id;
+    return language_id;
   }
 
   public void setLanguages_Language_Id(long languages_Language_Id) {
-    this.languages_Language_Id = languages_Language_Id;
+    this.language_id = languages_Language_Id;
   }
 
 }

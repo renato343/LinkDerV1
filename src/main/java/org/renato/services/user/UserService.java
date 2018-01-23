@@ -18,11 +18,12 @@ public interface UserService {
 
     Iterable<Frameworks> getAllFrameWork();
 
-
     Iterable<Frameworks> getCandidate_FrameworksByCandidateID(Long id);
 
 
+
     Iterable<Company> getAllCompanies();
+
 
     Iterable<Match> getAllMatches();
 
@@ -42,6 +43,8 @@ public interface UserService {
     Iterable<Languages> getCandidate_LanguagesByCandidateID(Long id);
 
     Iterable<Projects> getProjectsByCompany(Long company_id);
+
+    Company getCompanyById(long id);
 
 
 //    void updateMatch(Match match);
