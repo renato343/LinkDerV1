@@ -71,12 +71,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public Company getCompanyByEmail(String email) {
 
-        return companyRepository.findCompaniesByEmail (email);
+        return companyRepository.findCompaniesByEmail(email);
 
     }
 
     @Override
-    public Iterable<Frameworks> getAllFrameWork(){
+    public Iterable<Frameworks> getAllFrameWork() {
         return frameworksRepository.findAll();
     }
 
@@ -95,10 +95,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean addLanguage(Languages language) {
 
-        if(languagesRepository.findByName(language.getName())==null) {
+        if (languagesRepository.findByName(language.getName()) == null) {
             languagesRepository.save(language);
             return true;
-        }else {
+        } else {
             return false;
         }
 
@@ -107,10 +107,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean addFramework(Frameworks frameworks) {
 
-        if(frameworksRepository.findByName(frameworks.getName())==null) {
+        if (frameworksRepository.findByName(frameworks.getName()) == null) {
             frameworksRepository.save(frameworks);
             return true;
-        }else {
+        } else {
             return false;
         }
 
@@ -123,12 +123,27 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Iterable<Projects> getProjectsByCompany(Long company_id) {
-       return projectsRepository.findProjectByCompanyId(company_id);
+        return projectsRepository.findProjectByCompanyId(company_id);
     }
 
     @Override
     public Company getCompanyById(long id) {
-       return companyRepository.findOne(id);
+        return companyRepository.findOne(id);
+    }
+
+    @Override
+    public Iterable<Projects> getallProjects() {
+        return projectsRepository.findAll();
+    }
+
+    @Override
+    public Iterable<Languages> getLanguage_Project(long projectId) {
+        return languagesRepository.searchLanguagesByProject(projectId);
+    }
+
+    @Override
+    public Iterable<Frameworks> getFrameworks_Project(long projectId) {
+        return frameworksRepository.findFrameworksByProjectId(projectId);
     }
 
     @Transactional
@@ -190,39 +205,4 @@ public class UserServiceImpl implements UserService {
         return isAuthenticate;
     }
 
-
-
-
-
-//
-//    @Override
-//    public Match checkMatch(Candidate candidate, Company company) {
-//
-//        return matchDao.getmatch(candidate, company);
-//
-//    }
-//
-//    @Override
-//    public void match(Candidate candidate, Company company) {
-//
-//            if (!isCompany) {
-//                Match match = new Match(candidate.getCandidate_id(), company.getCompany_id(), true, false);
-//                matchDao.create(match);
-//            } else {
-//                Match match = new Match(candidate.getCandidate_id(), company.getCompany_id(), false, true);
-//                matchDao.create(match);
-//            }
-//    }
-//
-//    @Override
-//    public void updateMatch(Match match){
-//
-//        if (!isCompany) {
-//            match.setCandidate_bol(true);
-//            matchDao.update(match);
-//        } else {
-//            match.setCompany_bol(true);
-//            matchDao.update(match);
-//        }
-//    }
 }

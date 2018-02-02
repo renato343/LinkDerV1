@@ -3,6 +3,7 @@ package org.renato.Controllers;
 import org.renato.model.pojos.Candidates;
 import org.renato.model.pojos.Frameworks;
 import org.renato.model.pojos.Languages;
+import org.renato.model.pojos.Projects;
 import org.renato.model.pojos.wrapper.CandidateWrapper;
 import org.renato.services.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +62,7 @@ public class CandidateController {
     @RequestMapping(method=RequestMethod.POST ,path = "/addCandidate")
     public @ResponseBody
     String addNewUser(@RequestBody CandidateWrapper candidate) {
+
 
         for (Languages language:candidate.getLanguages()) {
 

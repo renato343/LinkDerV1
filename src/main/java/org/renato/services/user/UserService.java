@@ -46,9 +46,10 @@ public interface UserService {
 
     Company getCompanyById(long id);
 
+    Iterable<Projects> getallProjects();
 
-//    void updateMatch(Match match);
-//
-//    Match checkMatch(Candidate candidate, Company company);
+    Iterable<Languages> getLanguage_Project(long projectId);
+
+    Iterable<Frameworks> getFrameworks_Project(long projectId);
 
 }

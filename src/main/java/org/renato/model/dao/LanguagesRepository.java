@@ -15,4 +15,11 @@ public interface LanguagesRepository extends CrudRepository<Languages,Long> {
             "where candidates_id = ?1)", nativeQuery = true)
     Iterable<Languages> searchByCadetId(Long id);
 
+    @Query(value = "SELECT * FROM languages " +
+            "WHERE language_id " +
+            "IN (SELECT language_id " +
+            "FROM projects_languages " +
+            "where project_id = ?1)", nativeQuery = true)
+    Iterable<Languages> searchLanguagesByProject(Long id);
+
 }

@@ -14,4 +14,11 @@ public interface FrameworksRepository extends CrudRepository<Frameworks,Long> {
             "FROM candidate_frameworks " +
             "where candidate_id = ?1)", nativeQuery = true)
     Iterable<Frameworks> searchByCadetId(Long id);
+
+    @Query(value = "SELECT * FROM frameworks " +
+            "WHERE framework_id " +
+            "IN (SELECT framework_id " +
+            "FROM projects_frameworks " +
+            "where projects_id = ?1)", nativeQuery = true)
+    Iterable<Frameworks> findFrameworksByProjectId(long projectId);
 }

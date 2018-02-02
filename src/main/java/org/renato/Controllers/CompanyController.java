@@ -1,7 +1,11 @@
 package org.renato.Controllers;
 
 import org.renato.model.pojos.Company;
+import org.renato.model.pojos.Frameworks;
+import org.renato.model.pojos.Languages;
+import org.renato.model.pojos.Projects;
 import org.renato.model.pojos.wrapper.CompanyWrapper;
+import org.renato.model.pojos.wrapper.ProjectWrapper;
 import org.renato.services.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,20 +22,10 @@ public class CompanyController {
     @Autowired
     private UserService userService;
 
-    @GetMapping(path = "/addCompany") // Map ONLY GET Requests
+    @RequestMapping(method = RequestMethod.POST, path = "addCompany")
     public @ResponseBody
-    String addNewUser(@RequestParam String name, @RequestParam String email) {
-        // @ResponseBody means the returned String is the response, not a view name
-        // @RequestParam means it is a parameter from the GET or POST request
+    void addNewUser() {
 
-        Company n = new Company();
-        n.setName(name);
-        n.setEmail(email);
-        if (userService.addCompany(n)) {
-            return "Saved";
-        } else {
-            return "User already register";
-        }
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/auth")
@@ -83,11 +77,55 @@ public class CompanyController {
         return companyWrapperList;
     }
 
+
+
+
+    @GetMapping(path = "/allProjects")
+    public @ResponseBody
+    Iterable<ProjectWrapper> getAllProjects() {
+
+        // This returns a JSON or XML with the users
+        Iterable<Projects> proj = userService.getallProjects();
+        List<ProjectWrapper> projectWrapperList = new ArrayList<>();
+
+        proj.forEach(pr -> {
+
+            ProjectWrapper pw = new ProjectWrapper ();
+
+            pw.setProject_id(pr.getProjectId());
+            pw.setName(pr.getName());
+            pw.setLanguages(userService.getLanguage_Project(pr.getProjectId()));
+            pw.setFrameworks(userService.getFrameworks_Project(pr.getProjectId()));
+
+            projectWrapperList.add(pw);
+
+        });
+        return projectWrapperList;
+    }
+
+
+
+
+
+
     @GetMapping(path = "/id")
     public @ResponseBody
     Company getCompanyById(@RequestParam long id) {
         return userService.getCompanyById(id);
     }
+
+    @GetMapping(path = "/allFrameworks")
+    public @ResponseBody
+    Iterable<Frameworks> getAllFrameworks() {
+        return userService.getAllFrameWork();
+    }
+
+    @GetMapping(path = "/allLanguages")
+    public @ResponseBody
+    Iterable<Languages> getAllLanguages() {
+        return userService.getAllLanguages();
+    }
+
 
 
 }
