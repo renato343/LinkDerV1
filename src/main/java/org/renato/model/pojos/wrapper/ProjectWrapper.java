@@ -1,5 +1,6 @@
 package org.renato.model.pojos.wrapper;
 
+import org.renato.model.pojos.Company;
 import org.renato.model.pojos.Frameworks;
 import org.renato.model.pojos.Languages;
 
@@ -12,6 +13,9 @@ public class ProjectWrapper {
     private Iterable<Languages> languages;
 
     private Iterable<Frameworks> frameworks;
+
+    private Company company;
+
 
 
     public ProjectWrapper() {
@@ -48,5 +52,13 @@ public class ProjectWrapper {
 
     public void setFrameworks(Iterable<Frameworks> frameworks) {
         this.frameworks = frameworks;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 }

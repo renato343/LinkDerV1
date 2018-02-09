@@ -2,24 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40ac2b1e-dab1-4f1f-abfc-04b4a554a8aa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/renato/model/pojos/wrapper/ProjectWrapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/modelDatabase.mwb" afterPath="$PROJECT_DIR$/src/main/resources/modelDatabase.mwb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/modelDatabase.mwb.bak" afterPath="$PROJECT_DIR$/src/main/resources/modelDatabase.mwb.bak" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/renato/Application.class" afterPath="$PROJECT_DIR$/target/classes/org/renato/Application.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/renato/Controllers/CandidateController.class" afterPath="$PROJECT_DIR$/target/classes/org/renato/Controllers/CandidateController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/renato/Controllers/CompanyController.class" afterPath="$PROJECT_DIR$/target/classes/org/renato/Controllers/CompanyController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/renato/model/dao/FrameworksRepository.class" afterPath="$PROJECT_DIR$/target/classes/org/renato/model/dao/FrameworksRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/renato/model/dao/LanguagesRepository.class" afterPath="$PROJECT_DIR$/target/classes/org/renato/model/dao/LanguagesRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/renato/model/dao/CompanyRepository.class" afterPath="$PROJECT_DIR$/target/classes/org/renato/model/dao/CompanyRepository.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/renato/services/user/UserService.class" afterPath="$PROJECT_DIR$/target/classes/org/renato/services/user/UserService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/renato/services/user/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/renato/services/user/UserServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/5cb91fb5-17f5-45e1-8b0e-010983797428.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/5cb91fb5-17f5-45e1-8b0e-010983797428.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/renato/Application.java" afterPath="$PROJECT_DIR$/src/main/java/org/renato/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/renato/Controllers/CandidateController.java" afterPath="$PROJECT_DIR$/src/main/java/org/renato/Controllers/CandidateController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/renato/Controllers/CompanyController.java" afterPath="$PROJECT_DIR$/src/main/java/org/renato/Controllers/CompanyController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/renato/model/dao/FrameworksRepository.java" afterPath="$PROJECT_DIR$/src/main/java/org/renato/model/dao/FrameworksRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/renato/model/dao/LanguagesRepository.java" afterPath="$PROJECT_DIR$/src/main/java/org/renato/model/dao/LanguagesRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/renato/model/dao/ProjectsRepository.java" afterPath="$PROJECT_DIR$/src/main/java/org/renato/model/dao/ProjectsRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/renato/model/dao/CompanyRepository.java" afterPath="$PROJECT_DIR$/src/main/java/org/renato/model/dao/CompanyRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/renato/model/pojos/wrapper/ProjectWrapper.java" afterPath="$PROJECT_DIR$/src/main/java/org/renato/model/pojos/wrapper/ProjectWrapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/renato/services/user/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/org/renato/services/user/UserService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/renato/services/user/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/renato/services/user/UserServiceImpl.java" />
     </list>
@@ -53,6 +43,12 @@
         <item name="linkder@localhost" type="e3449647:DbNodeDescriptor" />
         <item name="linkder" type="e3449647:DbNodeDescriptor" />
       </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="linkder@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="linkder" type="e3449647:DbNodeDescriptor" />
+        <item name="companys_projects" type="e3449647:DbNodeDescriptor" />
+      </path>
     </expand>
     <select />
   </component>
@@ -61,38 +57,48 @@
       <file leaf-file-name="CompanyController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/Controllers/CompanyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="90" column="28" lean-forward="false" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
-              <folding>
-                <element signature="method#addNewUser#0;class#CompanyController#0" expanded="false" />
-                <element signature="method#authenticate#0;class#CompanyController#0" expanded="false" />
-                <element signature="method#getAllCompanies#0;class#CompanyController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LanguagesRepository.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/dao/LanguagesRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding>
-                <marker date="1517589578436" expanded="true" signature="325:510" ph="SELECT * FRO... languages" />
-                <marker date="1517589578436" expanded="true" signature="405:509" ph="SELECT candi... candidate_languages" />
-                <marker date="1517589578436" expanded="true" signature="604:783" ph="SELECT * FRO... languages" />
-                <marker date="1517589578436" expanded="true" signature="684:782" ph="SELECT proje... projects_languages" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5cb91fb5-17f5-45e1-8b0e-010983797428/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+            <state relative-caret-position="1386">
+              <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FrameworksRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/dao/FrameworksRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+              <folding>
+                <marker date="1517502530887" expanded="true" signature="329:515" ph="SELECT * FRO... frameworks" />
+                <marker date="1517502530887" expanded="true" signature="411:514" ph="SELECT frame... candidate_frameworks" />
+                <marker date="1517502530887" expanded="true" signature="610:794" ph="SELECT * FRO... frameworks" />
+                <marker date="1517502530887" expanded="true" signature="692:793" ph="SELECT frame... projects_frameworks" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompanyRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/dao/CompanyRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="16" selection-end-column="37" />
+              <folding>
+                <marker date="1518014869617" expanded="true" signature="336:379" ph="SELECT * FRO... companys" />
+                <marker date="1518014869617" expanded="true" signature="487:664" ph="SELECT * FRO... companys" />
+                <marker date="1518014869617" expanded="true" signature="565:663" ph="SELECT compa... companys_projects" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,7 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/renato/model/pojos/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/renato/model/pojos/Technlogies.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/renato/model/pojos/Technologies.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/renato/model/pojos/Match.java" />
@@ -170,15 +175,16 @@
         <option value="$PROJECT_DIR$/src/main/java/org/renato/model/pojos/Frameworks.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/renato/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/renato/Controllers/CandidateController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/renato/model/dao/ProjectsRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/data.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/org/renato/model/dao/LanguagesRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/renato/model/dao/CompanyRepository.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5cb91fb5-17f5-45e1-8b0e-010983797428/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/org/renato/services/user/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/renato/services/user/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/renato/model/pojos/wrapper/ProjectWrapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/renato/Controllers/CompanyController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/renato/services/user/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/renato/model/dao/FrameworksRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/renato/model/dao/ProjectsRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/renato/services/user/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/data.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5cb91fb5-17f5-45e1-8b0e-010983797428/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/org/renato/model/dao/LanguagesRepository.java" />
       </list>
     </option>
   </component>
@@ -217,10 +223,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="3278" />
-    <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="876" />
+    <option name="width" value="1378" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -238,7 +242,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -307,6 +310,27 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="renato" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="pojos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Linkder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LinkDer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="renato" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="pojos" type="462c0819:PsiDirectoryNode" />
+              <item name="wrapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Linkder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LinkDer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="renato" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -330,9 +354,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -345,7 +370,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/org/renato/teste/Pojos" />
+    <property name="last_opened_file_path" value="E:/LeanFtjava" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelOrder0" value="0" />
@@ -392,8 +417,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application ">
-    <configuration name="Application " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="org.renato.*" />
@@ -402,7 +427,6 @@
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.renato.Application" />
       <option name="SHOW_IN_DASHBOARD" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <module name="Linkder" />
       <envs />
     </configuration>
@@ -514,7 +538,7 @@
     </configuration>
     <recent_temporary>
       <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Spring Boot.Application " />
+        <item index="0" class="java.lang.String" itemvalue="Spring Boot.Application" />
       </list>
     </recent_temporary>
   </component>
@@ -589,12 +613,21 @@
       <workItem from="1516960812584" duration="4484000" />
       <workItem from="1517393544477" duration="1875000" />
       <workItem from="1517477431621" duration="6531000" />
-      <workItem from="1517586943719" duration="3177000" />
+      <workItem from="1517586943719" duration="3867000" />
+      <workItem from="1517744371641" duration="316000" />
+      <workItem from="1517744708456" duration="377000" />
+      <workItem from="1518005679297" duration="3512000" />
+      <workItem from="1518024471167" duration="183000" />
+      <workItem from="1518026763702" duration="391000" />
+      <workItem from="1518027438705" duration="1762000" />
+      <workItem from="1518169506727" duration="904000" />
+      <workItem from="1518177633678" duration="424000" />
+      <workItem from="1518178570521" duration="1757000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="281844000" />
+    <option name="totallyTimeSpent" value="292160000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -606,32 +639,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="3278" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52649575" sideWeight="0.11043873" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18481375" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18409742" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09762901" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42905983" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.57322174" sideWeight="0.49713877" order="9" side_tool="false" content_ui="combo" x="685" y="31" width="680" height="686" />
+      <window_info id="Run Dashboard" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52649575" sideWeight="0.8895613" order="9" side_tool="false" content_ui="combo" x="1758" y="90" width="1254" height="686" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.44211996" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="3290" y="31" width="1428" height="332" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47977686" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28223497" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32649574" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47863248" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29198185" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -646,6 +678,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -715,14 +748,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/renato/Controllers/CandidateController.java</url>
-          <line>27</line>
-          <properties />
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager />
@@ -819,13 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/dao/CompanyRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/pojos/Languages.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -837,7 +855,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="45" column="35" lean-forward="false" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -862,14 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/31fefd50/5cb91fb5-17f5-45e1-8b0e-010983797428/linkder.candidates">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -877,62 +886,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/pojos/Projects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/pojos/wrapper/CompanyWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="17" column="44" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="17" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/pojos/wrapper/ProjectWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/Controllers/CandidateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="57" column="32" lean-forward="true" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
-          <folding>
-            <element signature="method#addNewUser#0;class#CandidateController#0" expanded="false" />
-            <element signature="method#authenticate#0;class#CandidateController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/services/user/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="46" column="36" lean-forward="false" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/dao/FrameworksRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/dao/ProjectsRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <marker date="1517502530697" expanded="true" signature="324:501" ph="SELECT * FRO... projects" />
-            <marker date="1517502530697" expanded="true" signature="402:500" ph="SELECT compa... companys_projects" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -964,36 +921,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/teste/Pojos/linkder_candidate_frameworks.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/services/user/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="139" column="67" lean-forward="false" selection-start-line="139" selection-start-column="67" selection-end-line="139" selection-end-column="67" />
-          <folding>
-            <element signature="method#getCandidateById#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#getCandidateByEmail#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#addCandidate#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#getCompanyByEmail#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#getCandidate_FrameworksByCandidateID#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#addLanguage#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#addFramework#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#getProjectsByCompany#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#getLanguage_Project#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#getFrameworks_Project#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#addCompany#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#authCompany#0;class#UserServiceImpl#0" expanded="false" />
-            <element signature="method#authCandidate#0;class#UserServiceImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/teste/Pojos/linkder_candidate_frameworks.sql" />
     <entry file="das://table:/31fefd50/5cb91fb5-17f5-45e1-8b0e-010983797428/linkder.projects">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1015,14 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/data.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="386" column="0" lean-forward="false" selection-start-line="386" selection-start-column="0" selection-end-line="386" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/31fefd50/5cb91fb5-17f5-45e1-8b0e-010983797428/linkder.languages">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1030,36 +950,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/Controllers/CompanyController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/pojos/Projects.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="90" column="28" lean-forward="false" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
-          <folding>
-            <element signature="method#addNewUser#0;class#CompanyController#0" expanded="false" />
-            <element signature="method#authenticate#0;class#CompanyController#0" expanded="false" />
-            <element signature="method#getAllCompanies#0;class#CompanyController#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="132">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/Controllers/CandidateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/dao/LanguagesRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/dao/ProjectsRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="14" column="57" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="14" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5cb91fb5-17f5-45e1-8b0e-010983797428/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
-          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/dao/CompanyRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="16" selection-end-column="37" />
+          <folding>
+            <marker date="1518014869617" expanded="true" signature="336:379" ph="SELECT * FRO... companys" />
+            <marker date="1518014869617" expanded="true" signature="487:664" ph="SELECT * FRO... companys" />
+            <marker date="1518014869617" expanded="true" signature="565:663" ph="SELECT compa... companys_projects" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/services/user/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/services/user/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="153" column="18" lean-forward="true" selection-start-line="153" selection-start-column="18" selection-end-line="153" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/pojos/wrapper/ProjectWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="56" column="33" lean-forward="false" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/data.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8172">
+          <caret line="386" column="0" lean-forward="false" selection-start-line="386" selection-start-column="0" selection-end-line="386" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/Controllers/CompanyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1386">
+          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/dao/LanguagesRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/model/dao/FrameworksRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="132">
+          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding>
-            <marker date="1517589578436" expanded="true" signature="325:510" ph="SELECT * FRO... languages" />
-            <marker date="1517589578436" expanded="true" signature="405:509" ph="SELECT candi... candidate_languages" />
-            <marker date="1517589578436" expanded="true" signature="604:783" ph="SELECT * FRO... languages" />
-            <marker date="1517589578436" expanded="true" signature="684:782" ph="SELECT proje... projects_languages" />
+            <marker date="1517502530887" expanded="true" signature="329:515" ph="SELECT * FRO... frameworks" />
+            <marker date="1517502530887" expanded="true" signature="411:514" ph="SELECT frame... candidate_frameworks" />
+            <marker date="1517502530887" expanded="true" signature="610:794" ph="SELECT * FRO... frameworks" />
+            <marker date="1517502530887" expanded="true" signature="692:793" ph="SELECT frame... projects_frameworks" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/renato/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

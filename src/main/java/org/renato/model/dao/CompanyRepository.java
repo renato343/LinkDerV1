@@ -9,4 +9,12 @@ public interface CompanyRepository extends CrudRepository<Company,Long> {
 
     @Query (value = "SELECT * FROM companys WHERE email = :email", nativeQuery = true)
     Company findCompaniesByEmail(@Param("email") String email);
+
+    @Query(value = "SELECT * FROM companys " +
+            "WHERE company_id " +
+            "IN (SELECT companys_id " +
+            "FROM companys_projects " +
+            "WHERE Projects_id = ?1)",nativeQuery = true)
+    Company findCompaniesByProject(long projectId);
+
 }

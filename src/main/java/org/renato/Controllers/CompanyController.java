@@ -96,17 +96,14 @@ public class CompanyController {
             pw.setName(pr.getName());
             pw.setLanguages(userService.getLanguage_Project(pr.getProjectId()));
             pw.setFrameworks(userService.getFrameworks_Project(pr.getProjectId()));
+            pw.setCompany(userService.getCompanyByProjects(pr.getProjectId()));
+
 
             projectWrapperList.add(pw);
 
         });
         return projectWrapperList;
     }
-
-
-
-
-
 
     @GetMapping(path = "/id")
     public @ResponseBody

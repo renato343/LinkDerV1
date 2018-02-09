@@ -146,6 +146,11 @@ public class UserServiceImpl implements UserService {
         return frameworksRepository.findFrameworksByProjectId(projectId);
     }
 
+    @Override
+    public Company getCompanyByProjects(long projectId) {
+        return companyRepository.findCompaniesByProject(projectId);
+    }
+
     @Transactional
     @Override
     public Iterable<Company> getAllCompanies() {
