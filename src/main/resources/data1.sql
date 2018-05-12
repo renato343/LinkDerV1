@@ -88,6 +88,22 @@ CREATE TABLE IF NOT EXISTS `linkder`.`frameworks` (
 
 
 -- -----------------------------------------------------
+-- Table `linkder`.`match_table`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `linkder`.`match_table` ;
+
+CREATE TABLE IF NOT EXISTS `linkder`.`match_table` (
+  `match_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `candidate_bol` BIT(1) NULL DEFAULT b'0',
+  `candidate_id` INT(11) NULL DEFAULT NULL,
+  `company_bol` BIT(1) NULL DEFAULT b'0',
+  `company_id` INT(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`match_id`))
+  ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
 -- Table `linkder`.`projects`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `linkder`.`projects` ;
@@ -97,34 +113,6 @@ CREATE TABLE IF NOT EXISTS `linkder`.`projects` (
   `Name` VARCHAR(45) NULL,
   PRIMARY KEY (`project_id`))
   ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `linkder`.`match_table`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `linkder`.`match_table` ;
-
-CREATE TABLE IF NOT EXISTS `linkder`.`match_table` (
-  `match_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `candidate_id` BIGINT(20) NULL,
-  `candidate_bol` BIT(1) NULL DEFAULT b'0',
-  `project_id` BIGINT(20) NULL,
-  `project_bol` BIT(1) NULL DEFAULT b'0',
-  PRIMARY KEY (`match_id`),
-  INDEX `fk_match_table_candidates1_idx` (`candidate_id` ASC),
-  INDEX `fk_match_table_projects1_idx` (`project_id` ASC),
-  CONSTRAINT `fk_match_table_candidates1`
-  FOREIGN KEY (`candidate_id`)
-  REFERENCES `linkder`.`candidates` (`candidate_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_match_table_projects1`
-  FOREIGN KEY (`project_id`)
-  REFERENCES `linkder`.`projects` (`project_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-  ENGINE = InnoDB
-  DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------

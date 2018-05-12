@@ -151,6 +151,19 @@ public class UserServiceImpl implements UserService {
         return companyRepository.findCompaniesByProject(projectId);
     }
 
+    @Override
+    public String match(Match n) {
+
+        System.out.println("match arriving "  +  n.getCandidate_id());
+        System.out.println("match arriving "  +  n.getMatch_id());
+        System.out.println("match arriving "  +  n.getCandidate_bol());
+        System.out.println("match arriving "  +  n.getProject_bol());
+
+        matchRepository.
+
+        return "save";
+    }
+
     @Transactional
     @Override
     public Iterable<Company> getAllCompanies() {

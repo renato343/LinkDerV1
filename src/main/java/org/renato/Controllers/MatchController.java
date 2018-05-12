@@ -1,30 +1,25 @@
 package org.renato.Controllers;
 
+
 import org.renato.model.pojos.Match;
 import org.renato.services.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(path = "/match")
 public class MatchController {
 
     @Autowired
     private UserService userService;
 
 
-    @GetMapping(path = "/addMatch")
+    @RequestMapping(method=RequestMethod.POST, path = "/addMatch")
     public @ResponseBody
-    String addNewUser(@RequestParam String name
-            , @RequestParam String email) {
+    String addNewMatch(@RequestBody  Match n) {
 
-        Match n = new Match();
-//        n.setName(name);
-//        n.setEmail(email);
-//        matchRepository.save(n);
-        return "Saved";
+        userService.match(n);
+        return "save";
     }
 
     @GetMapping(path="/allMatches")
