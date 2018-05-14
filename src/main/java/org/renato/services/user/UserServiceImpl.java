@@ -154,10 +154,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public String match(Match n) {
 
-        System.out.println("match arriving "  +  n.getCandidate_id());
-        System.out.println("match arriving "  +  n.getMatch_id());
-        System.out.println("match arriving "  +  n.getCandidate_bol());
-        System.out.println("match arriving "  +  n.getProject_bol());
+        System.out.println("ID "  +  n.getMatch_id());
+        System.out.println("CANDIDATE ID "  +  n.getCandidate_id());
+        System.out.println("CANDIDATE BOL "  +  n.isCandidate_bol());
+        System.out.println("PROJECT ID "  +  n.getProject_id());
+        System.out.println("PROJECT BOL "  +  n.isProject_bol());
+
+        matchRepository.save(n);
 
         return "save";
     }

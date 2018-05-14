@@ -15,42 +15,33 @@ public class Match {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long match_id;
 
-    private Integer match_id;
-
-    private Integer candidate_id;
-
-    private Integer project_id;
+    private long candidate_id;
 
     private boolean candidate_bol;
 
+    private long project_id;
+
     private boolean project_bol;
 
-    public Integer getMatch_id() {
+    public long getMatch_id() {
         return match_id;
     }
 
-    public void setMatch_id(Integer match_id) {
+    public void setMatch_id(long match_id) {
         this.match_id = match_id;
     }
 
-    public Integer getCandidate_id() {
+    public long getCandidate_id() {
         return candidate_id;
     }
 
-    public void setCandidate_id(Integer candidate_id) {
+    public void setCandidate_id(long candidate_id) {
         this.candidate_id = candidate_id;
     }
 
-    public Integer getProject_id() {
-        return project_id;
-    }
-
-    public void setProject_id(Integer project_id) {
-        this.project_id = project_id;
-    }
-
-    public boolean getCandidate_bol() {
+    public boolean isCandidate_bol() {
         return candidate_bol;
     }
 
@@ -58,7 +49,15 @@ public class Match {
         this.candidate_bol = candidate_bol;
     }
 
-    public boolean getProject_bol() {
+    public long getProject_id() {
+        return project_id;
+    }
+
+    public void setProject_id(long project_id) {
+        this.project_id = project_id;
+    }
+
+    public boolean isProject_bol() {
         return project_bol;
     }
 

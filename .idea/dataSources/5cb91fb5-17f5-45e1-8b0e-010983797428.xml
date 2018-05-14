@@ -939,7 +939,7 @@
     <table id="238" parent="4" name="languages">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="239" parent="4" name="match_table">
+    <table id="239" parent="4" name="match">
       <Engine>InnoDB</Engine>
     </table>
     <table id="240" parent="4" name="projects">

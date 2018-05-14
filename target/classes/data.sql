@@ -100,11 +100,11 @@ CREATE TABLE IF NOT EXISTS `linkder`.`projects` (
 
 
 -- -----------------------------------------------------
--- Table `linkder`.`match_table`
+-- Table `linkder`.`match`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `linkder`.`match_table` ;
+DROP TABLE IF EXISTS `linkder`.`match` ;
 
-CREATE TABLE IF NOT EXISTS `linkder`.`match_table` (
+CREATE TABLE IF NOT EXISTS `linkder`.`match` (
   `match_id` INT(11) NOT NULL AUTO_INCREMENT,
   `candidate_id` BIGINT(20) NULL,
   `candidate_bol` BIT(1) NULL DEFAULT b'0',
