@@ -10,12 +10,12 @@ import javax.persistence.Id;
  */
 
 @Entity
-public class Match {
+public class Mitch {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long match_id;
+    private long mitch_id;
 
     private long candidate_id;
 
@@ -25,12 +25,12 @@ public class Match {
 
     private boolean project_bol;
 
-    public long getMatch_id() {
-        return match_id;
+    public long getMitch_id() {
+        return mitch_id;
     }
 
-    public void setMatch_id(long match_id) {
-        this.match_id = match_id;
+    public void setMitch_id(long mitch_id) {
+        this.mitch_id = mitch_id;
     }
 
     public long getCandidate_id() {

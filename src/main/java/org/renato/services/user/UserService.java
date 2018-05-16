@@ -25,7 +25,7 @@ public interface UserService {
     Iterable<Company> getAllCompanies();
 
 
-    Iterable<Match> getAllMatches();
+    Iterable<Mitch> getAllMatches();
 
     Iterable<Languages> getAllLanguages();
 
@@ -54,5 +54,5 @@ public interface UserService {
 
     Company getCompanyByProjects(long projectId);
 
-    String match(Match n);
+    String match(Mitch n);
 }

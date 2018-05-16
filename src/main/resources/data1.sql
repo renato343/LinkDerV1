@@ -105,12 +105,12 @@ CREATE TABLE IF NOT EXISTS `linkder`.`projects` (
 DROP TABLE IF EXISTS `linkder`.`match_table` ;
 
 CREATE TABLE IF NOT EXISTS `linkder`.`match_table` (
-  `match_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `mitch_id` INT(11) NOT NULL AUTO_INCREMENT,
   `candidate_id` BIGINT(20) NULL,
   `candidate_bol` BIT(1) NULL DEFAULT b'0',
   `project_id` BIGINT(20) NULL,
   `project_bol` BIT(1) NULL DEFAULT b'0',
-  PRIMARY KEY (`match_id`),
+  PRIMARY KEY (`mitch_id`),
   INDEX `fk_match_table_candidates1_idx` (`candidate_id` ASC),
   INDEX `fk_match_table_projects1_idx` (`project_id` ASC),
   CONSTRAINT `fk_match_table_candidates1`
@@ -343,7 +343,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `linkder`;
-INSERT INTO `linkder`.`match_table` (`match_id`, `candidate_id`, `candidate_bol`, `project_id`, `project_bol`) VALUES (DEFAULT, 1, 1, 1, 0);
+INSERT INTO `linkder`.`match_table` (`mitch_id`, `candidate_id`, `candidate_bol`, `project_id`, `project_bol`) VALUES (DEFAULT, 1, 1, 1, 0);
 
 COMMIT;
 

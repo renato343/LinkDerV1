@@ -100,17 +100,17 @@ CREATE TABLE IF NOT EXISTS `linkder`.`projects` (
 
 
 -- -----------------------------------------------------
--- Table `linkder`.`match`
+-- Table `linkder`.`mitch`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `linkder`.`match` ;
+DROP TABLE IF EXISTS `linkder`.`mitch` ;
 
-CREATE TABLE IF NOT EXISTS `linkder`.`match` (
-  `match_id` INT(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `linkder`.`mitch` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `candidate_id` BIGINT(20) NULL,
   `candidate_bol` BIT(1) NULL DEFAULT b'0',
   `project_id` BIGINT(20) NULL,
   `project_bol` BIT(1) NULL DEFAULT b'0',
-  PRIMARY KEY (`match_id`),
+  PRIMARY KEY (`id`),
   INDEX `fk_match_table_candidates1_idx` (`candidate_id` ASC),
   INDEX `fk_match_table_projects1_idx` (`project_id` ASC),
   CONSTRAINT `fk_match_table_candidates1`

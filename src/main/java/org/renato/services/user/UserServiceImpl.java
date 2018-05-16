@@ -152,9 +152,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String match(Match n) {
+    public String match(Mitch n) {
 
-        System.out.println("ID "  +  n.getMatch_id());
+        System.out.println("ID "  +  n.getMitch_id());
         System.out.println("CANDIDATE ID "  +  n.getCandidate_id());
         System.out.println("CANDIDATE BOL "  +  n.isCandidate_bol());
         System.out.println("PROJECT ID "  +  n.getProject_id());
@@ -173,7 +173,7 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public Iterable<Match> getAllMatches() {
+    public Iterable<Mitch> getAllMatches() {
         return matchRepository.findAll();
     }
 
