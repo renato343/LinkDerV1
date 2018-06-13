@@ -152,17 +152,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String match(Mitch n) {
+    public Mitch match(Mitch n) {
 
-        System.out.println("ID "  +  n.getMitch_id());
-        System.out.println("CANDIDATE ID "  +  n.getCandidate_id());
-        System.out.println("CANDIDATE BOL "  +  n.isCandidate_bol());
-        System.out.println("PROJECT ID "  +  n.getProject_id());
-        System.out.println("PROJECT BOL "  +  n.isProject_bol());
+        Mitch mitch = matchRepository.findMitch(n.getCandidate_id(),n.getProject_id());
 
-        matchRepository.save(n);
+        System.out.println("out of the find ");
 
-        return "save";
+        if(mitch == null){
+            System.out.println("entered mitch null ");
+            matchRepository.save(n);
+        }
+
+        return mitch;
     }
 
     @Transactional

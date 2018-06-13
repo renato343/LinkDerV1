@@ -54,5 +54,5 @@ public interface UserService {
 
     Company getCompanyByProjects(long projectId);
 
-    String match(Mitch n);
+    Mitch match(Mitch n);
 }

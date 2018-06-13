@@ -15,17 +15,14 @@ public class MatchController {
 
 
     @RequestMapping(method=RequestMethod.POST, path = "/addMatch")
-    public @ResponseBody
-    String addNewMatch(@RequestBody Mitch n) {
+    public @ResponseBody Mitch addNewMatch(@RequestBody Mitch n) {
 
-        userService.match(n);
-        return "save";
+        return userService.match(n);
     }
 
     @GetMapping(path="/allMatches")
     public @ResponseBody Iterable<Mitch> getAllCandidates() {
         return userService.getAllMatches();
     }
-
 
 }

@@ -6,13 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="LinkDer" />
-        <module name="TinderCompanyRest" />
+        <module name="Linkder" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="LinkDer" target="1.8" />
-      <module name="TinderCompanyRest" target="1.8" />
+      <module name="Linkder" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
